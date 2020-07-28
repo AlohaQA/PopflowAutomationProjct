@@ -1,0 +1,32 @@
+2020-07-27 10:08:43 INFO  pageObjects.AppManagerLoginPage:53 - Entered Email :anup.lakhe@openmethods.com
+2020-07-27 10:08:44 INFO  pageObjects.AppManagerLoginPage:59 - Entered Password :Aloha@7890
+2020-07-27 10:08:47 INFO  helperClass.CommonActions:317 - PASS :User is login successfully to App Manager
+2020-07-27 10:08:47 INFO  pageObjects.AppManagerHomePage:49 - Clicked on the expand-collapse button [[ChromeDriver: chrome on WINDOWS (e10bd8ad7ae6ea1c4c4b0296e8f3e27c)] -> xpath: //img[@class='expand-collapse-icon']]
+2020-07-27 10:08:47 INFO  pageObjects.AppManagerHomePage:56 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
+2020-07-27 10:08:50 INFO  helperClass.CommonActions:317 - PASS :Popflow CRM Instance page displayed
+2020-07-27 10:08:50 INFO  pageObjects.AppManagerHomePage:64 - Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'
+2020-07-27 10:08:51 INFO  pageObjects.PopflowHomePage:275 - Clicked on the add new workflow button[[ChromeDriver: chrome on WINDOWS (e10bd8ad7ae6ea1c4c4b0296e8f3e27c)] -> xpath: //i[@class='material-icons clickable'][contains(text(),'add')]]
+2020-07-27 10:08:51 INFO  pageObjects.PopflowHomePage:279 - Entered New Workflow Name :Create Workspace
+2020-07-27 10:08:51 INFO  pageObjects.PopflowHomePage:283 - Clicked on the add new workflow save button[[ChromeDriver: chrome on WINDOWS (e10bd8ad7ae6ea1c4c4b0296e8f3e27c)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[3]/button[2]]
+2020-07-27 10:09:00 INFO  helperClass.CommonActions:317 - PASS :User able to search the create workspace activity in the activity list
+2020-07-27 10:09:01 INFO  pageObjects.PopflowHomePage:181 - Clicked on the added create worksace activity [[ChromeDriver: chrome on WINDOWS (e10bd8ad7ae6ea1c4c4b0296e8f3e27c)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[1]/div]
+2020-07-27 10:09:02 INFO  pageObjects.PopflowHomePage:185 - Clicked on the entitiy textbox [[ChromeDriver: chrome on WINDOWS (e10bd8ad7ae6ea1c4c4b0296e8f3e27c)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[1]/input]
+2020-07-27 10:09:02 INFO  pageObjects.PopflowHomePage:189 - Contact entity is selected form the drop down [[ChromeDriver: chrome on WINDOWS (e10bd8ad7ae6ea1c4c4b0296e8f3e27c)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[1]/input]
+2020-07-27 10:09:06 INFO  helperClass.CommonActions:317 - PASS :User is able to add multiple entity fields for the contact workspace
+2020-07-27 10:09:09 INFO  pageObjects.PopflowHomePage:155 - Clicked on the close button from designer Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/i'
+2020-07-27 10:09:09 INFO  helperClass.BrowserHelper:57 - 
+2020-07-27 10:09:09 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-07-27 10:09:09 INFO  helperClass.BrowserHelper:69 - 1
+2020-07-27 10:09:12 INFO  pageObjects.OSCLoginPage:47 - Entered CRM Username :anupavaya	
+2020-07-27 10:09:12 INFO  pageObjects.OSCLoginPage:53 - Entered CRM Password :anupavaya
+2020-07-27 10:09:32 INFO  pageObjects.PopflowHomePage:160 - User is logged in to the OSC 
+2020-07-27 10:09:32 INFO  helperClass.BrowserHelper:57 - 
+2020-07-27 10:09:32 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-07-27 10:09:32 INFO  helperClass.BrowserHelper:69 - 0
+2020-07-27 10:09:32 INFO  pageObjects.PopflowHomePage:195 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
+2020-07-27 10:09:36 INFO  helperClass.BrowserHelper:57 - 
+2020-07-27 10:09:36 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-07-27 10:09:36 INFO  helperClass.BrowserHelper:69 - 1
+2020-07-27 10:09:37 INFO  helperClass.CommonActions:179 - Text is:	First Last
+2020-07-27 10:09:37 INFO  pageObjects.PopflowHomePage:168 - Text is :First Last
+2020-07-27 10:09:37 INFO  helperClass.CommonActions:317 - PASS :Contact is created using create workspace activity
