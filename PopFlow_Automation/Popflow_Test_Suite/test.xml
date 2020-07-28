@@ -4,9 +4,9 @@
 <test name="Verify Cloud Popflow Test Cases">
 		<classes>
 		<class
-				name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
+				name="com.popflow.Automation.testcases.PopFlowHomePageTest">
 				<methods>
-					<include name = "verifyCreateContactActivity">
+					<include name = "verifyImportWorkflowFunctionality">
 					</include>
 				</methods>
 			</class>

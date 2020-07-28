@@ -426,7 +426,7 @@ public class PopflowHomePage extends TestBase{
 			log.info("Import button is present" + ImportActivityButton.toString());
 			logger.info("Import button is present" + ImportActivityButton.toString());
 			commonActions.click(ImportActivityButton);
-			driver.switchTo().activeElement().sendKeys("C:\\Automation\\Server side Logic.pfwf");
+			//driver.switchTo().activeElement().sendKeys("C:\\Automation\\Server side Logic.pfwf");
 			//commonActions.Importclick(ImportActivityButton).sendKeys("C:/Users/Aloha8/Downloads/Server side Logic.pfwf");
 			commonActions.waitFor(7000);
 			

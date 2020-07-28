@@ -182,4 +182,12 @@ public class PopFlowHomePageTest extends TestBase {
 		this.AppManagerLogin();
 		PFHomePage.deleteCustomEventOnincidentClose();
 	}
+	
+	@Test
+	public void verifyImportWorkflowFunctionality() {
+		logger = extent.createTest("Verify that user is able to import the workflow");
+		this.AppManagerLogin();
+		PFHomePage.importWorkflow();
+		
+	}
 }

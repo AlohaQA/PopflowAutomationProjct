@@ -1,0 +1,1447 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Cloud Popflow Auomation Reports</title>
+
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Cloud Popflow Automation Result</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jul 28, 2020 07:19:27 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Classes</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> class(es) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> class(es) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='90.909%'><span class='strong'>10</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='9.091%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='5.917%'><span class='strong'>10</span> log(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='1.183%'>2</span> log(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='92.899%'>157</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Classes</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify popflow version displays inside the app manager</span>
+						<span class='test-time'>Jul 28, 2020 07:19:45 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:19:45 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:19:54 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+786ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:46 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:46 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:49 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:49 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (8464a8dd8b5784a0ec5e00d37babca98)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:49 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'>Info Button is present on the popflow studio [[ChromeDriver: chrome on WINDOWS (8464a8dd8b5784a0ec5e00d37babca98)] -> xpath: //i[contains(text(),'info')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'>Clicked on the info button on the popflow studio[[ChromeDriver: chrome on WINDOWS (8464a8dd8b5784a0ec5e00d37babca98)] -> xpath: //i[contains(text(),'info')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'>Popflow Version Is * * * Version
+2.0.10 * * *</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'>PASS :Popflow version is verified</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:19:54 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyPopflowVersion:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify popflow studio login functionality using valid CRM credentials</span>
+						<span class='test-time'>Jul 28, 2020 07:19:58 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:19:58 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:20:07 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+549ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:59 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:19:59 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:02 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:02 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (127c6be7b707481f80796d9e4a5e1840)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:02 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:05 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:06 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:06 AM</td>
+					<td class='step-details'>Clicked on the CRM Linked account Button[[ChromeDriver: chrome on WINDOWS (127c6be7b707481f80796d9e4a5e1840)] -> xpath: //a[@class='linked-account clickable']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:07 AM</td>
+					<td class='step-details'>Entered CRM Username :anupavaya</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:07 AM</td>
+					<td class='step-details'>Entered CRM Password :anupavaya</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:07 AM</td>
+					<td class='step-details'>Clicked on save credentials button :[[ChromeDriver: chrome on WINDOWS (127c6be7b707481f80796d9e4a5e1840)] -> xpath: /html/body/app-root/crm-manager/div/div/div/div[3]/button[2]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:07 AM</td>
+					<td class='step-details'>PASS :User is able to login with the valid credentials</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:07 AM</td>
+					<td class='step-details'>User is able to login with the valid credentials</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:20:07 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyLoginWithValidCRMCredentials:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify popflow studio login functionality using Invalid CRM credentials</span>
+						<span class='test-time'>Jul 28, 2020 07:20:11 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:20:11 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:20:20 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+892ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:11 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:11 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:15 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:15 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (c03ce7fab81f85d48918cb8f4687b2ef)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:15 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:17 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:17 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:18 AM</td>
+					<td class='step-details'>Entered CRM Username :invalid</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:19 AM</td>
+					<td class='step-details'>Entered CRM Password :invalid</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:19 AM</td>
+					<td class='step-details'>Clicked on save credentials button :[[ChromeDriver: chrome on WINDOWS (c03ce7fab81f85d48918cb8f4687b2ef)] -> xpath: /html/body/app-root/crm-manager/div/div/div/div[3]/button[2]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:20 AM</td>
+					<td class='step-details'>Error message when entered invalid CRM credentials is ×
+Error!
+Request failed with status code 401.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:20 AM</td>
+					<td class='step-details'>PASS :Showing correct error message for Invalid OSC credentials</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:20 AM</td>
+					<td class='step-details'>Clicked on cancel button :Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/crm-manager/div/div/div/div[3]/button[1]'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:20 AM</td>
+					<td class='step-details'>PASS :User is not able to login with the Invalid credentials</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:20:20 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyloginWithInvalidCRMCredentials:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify add new workflow functionality</span>
+						<span class='test-time'>Jul 28, 2020 07:20:24 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:20:24 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:20:35 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+419ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:24 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:24 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:28 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:28 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (cee16385e2834209dd26329fe9d3be32)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:28 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:31 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:31 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:32 AM</td>
+					<td class='step-details'>Clicked on the add new workflow button[[ChromeDriver: chrome on WINDOWS (cee16385e2834209dd26329fe9d3be32)] -> xpath: //i[@class='material-icons clickable'][contains(text(),'add')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:32 AM</td>
+					<td class='step-details'>Entered New Workflow Name :New Workflow</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:32 AM</td>
+					<td class='step-details'>Clicked on the add new workflow save button[[ChromeDriver: chrome on WINDOWS (cee16385e2834209dd26329fe9d3be32)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[3]/button[2]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:35 AM</td>
+					<td class='step-details'>User is unable to add the new workflow: [[ChromeDriver: chrome on WINDOWS (cee16385e2834209dd26329fe9d3be32)] -> xpath: //i[@class='material-icons clickable'][contains(text(),'add')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:35 AM</td>
+					<td class='step-details'>PASS :New workflow added successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:20:35 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyAddNewWorkflowFunctionality:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify that user is able to edit the workflow name</span>
+						<span class='test-time'>Jul 28, 2020 07:20:40 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:20:40 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:20:55 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+308ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:40 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:41 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:44 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:44 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (7a416428a1fc12d6774d20496fb3cc54)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:44 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:47 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:47 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:48 AM</td>
+					<td class='step-details'>Edit workflow button is present [[ChromeDriver: chrome on WINDOWS (7a416428a1fc12d6774d20496fb3cc54)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[1]/h5/edit-input/div/span/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:48 AM</td>
+					<td class='step-details'>Cllicked on the edit workflow buttonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[1]/h5/edit-input/div/span/i'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:52 AM</td>
+					<td class='step-details'>Clicked ont the settings button [[ChromeDriver: chrome on WINDOWS (7a416428a1fc12d6774d20496fb3cc54)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/button/i]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:20:55 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyEditWorkflowFunctionality:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify delete workflow functionality</span>
+						<span class='test-time'>Jul 28, 2020 07:20:59 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:20:59 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:21:07 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+206ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:59 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:20:59 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:02 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:02 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (9ef30089dc6ae69651c7e709ac7ac5e9)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:02 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:05 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:05 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:07 AM</td>
+					<td class='step-details'>Button clicked for location by hovering on it=>[[ChromeDriver: chrome on WINDOWS (9ef30089dc6ae69651c7e709ac7ac5e9)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:07 AM</td>
+					<td class='step-details'>Element is not present and click on element is not performed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:07 AM</td>
+					<td class='step-details'>Clicked on delete workflow buetton [[ChromeDriver: chrome on WINDOWS (9ef30089dc6ae69651c7e709ac7ac5e9)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:07 AM</td>
+					<td class='step-details'>Clicked on delete workflow button on popup [[ChromeDriver: chrome on WINDOWS (9ef30089dc6ae69651c7e709ac7ac5e9)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[2]/div/div/div[3]/button[2]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:07 AM</td>
+					<td class='step-details'>PASS :Workflow has been deleted successfully</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:21:07 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyDeleteWorkflowFunctionality:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify duplicate workflow functionality</span>
+						<span class='test-time'>Jul 28, 2020 07:21:11 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:21:11 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:21:24 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+646ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:11 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:11 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:15 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:15 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (38dd0364607c0c80f102c360cc115ad1)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:15 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:18 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:18 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:19 AM</td>
+					<td class='step-details'>Clicked on sort button[[ChromeDriver: chrome on WINDOWS (38dd0364607c0c80f102c360cc115ad1)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[1]/div/ul/li/a[2]/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:19 AM</td>
+					<td class='step-details'>Clicked on sort button[[ChromeDriver: chrome on WINDOWS (38dd0364607c0c80f102c360cc115ad1)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/button/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:19 AM</td>
+					<td class='step-details'>Clicked on duplicate button from drop down[[ChromeDriver: chrome on WINDOWS (38dd0364607c0c80f102c360cc115ad1)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/ul/li[1]/a]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:20 AM</td>
+					<td class='step-details'>Entered duplicate workflow name as :This is duplicate workflow</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:21 AM</td>
+					<td class='step-details'>Clicked on duplicate workflow button on popup[[ChromeDriver: chrome on WINDOWS (38dd0364607c0c80f102c360cc115ad1)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/duplicate-workflow/div/div/div/div[3]/button[2]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:24 AM</td>
+					<td class='step-details'>PASS :User is able to Duplicate the workflow</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:21:24 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyDuplicateWorkflowFuncttionality:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify that all the events are present under the telephony</span>
+						<span class='test-time'>Jul 28, 2020 07:21:28 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:21:28 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:21:37 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+335ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:28 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:28 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:31 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:31 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:31 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:34 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:35 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:35 AM</td>
+					<td class='step-details'>On Ring Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Ring')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:35 AM</td>
+					<td class='step-details'>Clicked on the On Ring Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Ring')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>On Answer Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Answer')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Clicked on the On Answer Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Answer')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>On Hold Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Hold')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Clicked on the On Hold Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Hold')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>On End Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On End')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Clicked on the On End Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On End')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Chat Ring Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'Chat Ring')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Clicked on the Chat Ring event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'Chat Ring')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Chat Accept Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'Chat Accept')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:36 AM</td>
+					<td class='step-details'>Clicked on the Chat Accept Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'Chat Accept')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'>Chat Reject Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'Chat Reject')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'>Clicked on the Chat Reject Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'Chat Reject')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'>On Chat End Event is present [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Chat End')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'>Clicked on the On Chat End Event [[ChromeDriver: chrome on WINDOWS (4087faa2cd63a3527b45b71ac0250ed7)] -> xpath: //span[contains(text(),'On Chat End')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'>PASS :All the Telephony events are present</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'>PASS :All the Chat events are present</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:21:37 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyPopflowEvents:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify that user is able to navigate to the CRM Instance</span>
+						<span class='test-time'>Jul 28, 2020 07:21:41 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:21:41 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:21:49 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+918ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:41 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:41 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:45 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:45 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (d92b66029c33cfe8bb5723c40336b2a0)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:45 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:47 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:47 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:47 AM</td>
+					<td class='step-details'>Instance button is present on the popflow studio [[ChromeDriver: chrome on WINDOWS (d92b66029c33cfe8bb5723c40336b2a0)] -> xpath: //a[contains(text(),'Instances')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:48 AM</td>
+					<td class='step-details'>Clicked on the instance button Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(text(),'Instances')]'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:48 AM</td>
+					<td class='step-details'>Clicked on the CRM instance design button Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:48 AM</td>
+					<td class='step-details'>Instance button displayed on the popflow studio [[ChromeDriver: chrome on WINDOWS (d92b66029c33cfe8bb5723c40336b2a0)] -> xpath: //a[contains(text(),'Instances')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:49 AM</td>
+					<td class='step-details'>PASS :User is able to navigate to the CRM Instance from the popflow studio home page</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:21:49 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyCRMInsatnceNavigation:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify that it is having validations for long workflow name</span>
+						<span class='test-time'>Jul 28, 2020 07:21:53 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:21:53 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:22:03 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+440ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:53 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:53 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:57 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:57 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (0a56be842404b705648d355599a5c6c1)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:57 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:59 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:21:59 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:01 AM</td>
+					<td class='step-details'>Edit workflow button is present [[ChromeDriver: chrome on WINDOWS (0a56be842404b705648d355599a5c6c1)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[1]/h5/edit-input/div/span/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:01 AM</td>
+					<td class='step-details'>Cllicked on the edit workflow buttonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[1]/h5/edit-input/div/span/i'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:01 AM</td>
+					<td class='step-details'>Error message when entered workflow name more than 50 characters : *Workflow name cannot be larger than 50 characters.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:01 AM</td>
+					<td class='step-details'>PASS :Showing correct error message after entering workflow name more than 50 characters</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:01 AM</td>
+					<td class='step-details'>Clicked ont the settings button [[ChromeDriver: chrome on WINDOWS (0a56be842404b705648d355599a5c6c1)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/button/i]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:03 AM</td>
+					<td class='step-details'>PASS :Validations are provided when user enter workflow name more than 50 characters</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:03 AM</td>
+					<td class='step-details'>Validations are provided when user enter workflow name more than 50 characters</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:22:03 AM</td>
+					<td class='step-details'><span class='label white-text green'>verifyErroMessageForLongWFName:: PASSED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Create Contact activity</span>
+						<span class='test-time'>Jul 28, 2020 07:22:07 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 28, 2020 07:22:07 AM</span>
+	<span class='label end-time'>Jul 28, 2020 07:23:10 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 3s+648ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:07 AM</td>
+					<td class='step-details'>Entered email :anup.lakhe@openmethods.com</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:07 AM</td>
+					<td class='step-details'>Entered Password :Aloha@7890</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:11 AM</td>
+					<td class='step-details'>PASS :User is login successfully to App Manager</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:11 AM</td>
+					<td class='step-details'>Clicked on the expand-collapse button[[ChromeDriver: chrome on WINDOWS (818918ff5b0ecc98288501551b1d8f5e)] -> xpath: //img[@class='expand-collapse-icon']]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:11 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:13 AM</td>
+					<td class='step-details'>PASS :Popflow CRM Instance page displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:14 AM</td>
+					<td class='step-details'>Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:14 AM</td>
+					<td class='step-details'>Clicked on the add new workflow button[[ChromeDriver: chrome on WINDOWS (818918ff5b0ecc98288501551b1d8f5e)] -> xpath: //i[@class='material-icons clickable'][contains(text(),'add')]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:15 AM</td>
+					<td class='step-details'>Entered New Workflow Name :Create Workspace</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:15 AM</td>
+					<td class='step-details'>Clicked on the add new workflow save button[[ChromeDriver: chrome on WINDOWS (818918ff5b0ecc98288501551b1d8f5e)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[3]/button[2]]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:23 AM</td>
+					<td class='step-details'>PASS :User able to search the create workspace activity in the activity list</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:25 AM</td>
+					<td class='step-details'>Clicked on the added create worksace activity [[ChromeDriver: chrome on WINDOWS (818918ff5b0ecc98288501551b1d8f5e)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[1]/div]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:25 AM</td>
+					<td class='step-details'>Clicked on the entitiy textbox [[ChromeDriver: chrome on WINDOWS (818918ff5b0ecc98288501551b1d8f5e)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[1]/input]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:26 AM</td>
+					<td class='step-details'>Contact entity is selected form the drop down[[ChromeDriver: chrome on WINDOWS (818918ff5b0ecc98288501551b1d8f5e)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[1]/input]</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:30 AM</td>
+					<td class='step-details'>PASS :User is able to add multiple entity fields for the contact workspace</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:32 AM</td>
+					<td class='step-details'>Clicked on the close button from designer Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/i'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:36 AM</td>
+					<td class='step-details'>Entered CRM Username :anupavaya</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:36 AM</td>
+					<td class='step-details'>Entered CRM Password :anupavaya</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:56 AM</td>
+					<td class='step-details'>User is logged in to the OSC</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:22:56 AM</td>
+					<td class='step-details'>Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:23:10 AM</td>
+					<td class='step-details'>FAIL :Unable to create contact using create workspace activity expected [true] but found [false]</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:23:10 AM</td>
+					<td class='step-details'>FAIL<img data-featherlight='C:\Users\Aloha8\My workspace\Git\PopFlow_Automation\Failed_Screenshots\verifyCreateContactActivity_07_28_2020_07_23.png' width='10%' src='C:\Users\Aloha8\My workspace\Git\PopFlow_Automation\Failed_Screenshots\verifyCreateContactActivity_07_28_2020_07_23.png' data-src='C:\Users\Aloha8\My workspace\Git\PopFlow_Automation\Failed_Screenshots\verifyCreateContactActivity_07_28_2020_07_23.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:23:10 AM</td>
+					<td class='step-details'><span class='label white-text red'>verifyCreateContactActivity:: FAILED</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Classes
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>11</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>169</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jul 28, 2020 07:19:27 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jul 28, 2020 07:23:11 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>223,763ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 0,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 10,
+				failChild: 1,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 1,
+				
+				passGrandChild: 10,
+				failGrandChild: 2,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 157,
+				exceptionsGrandChild: 2,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>
