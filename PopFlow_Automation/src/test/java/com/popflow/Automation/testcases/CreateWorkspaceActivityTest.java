@@ -55,10 +55,15 @@ public class CreateWorkspaceActivityTest extends TestBase{
 				"User is not able to add the Create Workspace activity");
 	}
 	
-	@Test
+	//@Test
 	public void verifyCreateContactActivity() {
 		logger = extent.createTest("Verify Create Contact activity");
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.verifyCreateContact(prop.getProperty("CreateWorkspaceString"));
 	}
+	
+	public void verifyEditActivity() {
+		
+	}
+	
 }
