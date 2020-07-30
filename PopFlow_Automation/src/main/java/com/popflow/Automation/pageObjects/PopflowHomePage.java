@@ -2,6 +2,8 @@ package com.popflow.Automation.pageObjects;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
 import javax.sound.midi.MidiDevice.Info;
@@ -173,6 +175,18 @@ public class PopflowHomePage extends TestBase{
 	
 	@FindBy(xpath = "//a[contains(text(),'Instances')]")
 	WebElement InstanceButton;
+	
+	@FindBy(xpath = "//h6[contains(text(),'Import Workflow Test')]")
+	WebElement ImportWorkflowTag;
+	
+	@FindBy(xpath = "//h6[contains(text(),'Import Workflow Test(1)')]")
+	WebElement ImportNewWorkflowTag;
+	
+	@FindBy(xpath = "//button[contains(text(),'Override')]")
+	WebElement ImortOverrideButton;
+	
+	@FindBy(xpath = "//button[contains(text(),'Import new')]")
+	WebElement ImortNewButtonOnPopup;
 	
 	
 	public PopflowHomePage(WebDriver driver, ExtentTest logger) {
@@ -419,22 +433,75 @@ public class PopflowHomePage extends TestBase{
 		//commonActions.waitUntilElementIsVisible(driver, 60, DeleteWorkFlowButton);
 	}	
 	
-	public void importWorkflow() {
-		commonActions.waitFor(5000);
+	public void importWorkflow() throws AWTException {
+			commonActions.waitFor(2000);
 		if(commonActions.isElementPresent(ImportActivityButton))
 		{
+			Robot robot = new Robot();
 			log.info("Import button is present" + ImportActivityButton.toString());
 			logger.info("Import button is present" + ImportActivityButton.toString());
 			commonActions.click(ImportActivityButton);
-			//driver.switchTo().activeElement().sendKeys("C:\\Automation\\Server side Logic.pfwf");
-			//commonActions.Importclick(ImportActivityButton).sendKeys("C:/Users/Aloha8/Downloads/Server side Logic.pfwf");
-			commonActions.waitFor(7000);
+			log.info("Clicked on the import button " + ImportActivityButton.toString());
+			logger.info("Clicked on the impoer button " + ImportActivityButton.toString());
+			robot.setAutoDelay(2000);
+			StringSelection string = new StringSelection("C:\\Users\\Aloha8\\My workspace\\Git\\PopFlow_Automation\\Import\\Import Workflow Test.pfwf");
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(string,null);
+			commonActions.waitFor(1000);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_V);
 			
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyRelease(KeyEvent.VK_V);
+			robot.setAutoDelay(1000);
+			
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			if(commonActions.isElementPresent(ImportWorkflowTag)) {
+				
+				log.info("Selected a workflow to import ");
+				logger.info("Selected a workflow to import");
+			}
 		}
 		else {
 			log.info("Import button is not present" + ImportActivityButton.toString());
 			logger.info("Import button is not present" + ImportActivityButton.toString());
 		}
+	}
+	
+	public void importOverride() throws AWTException {
+		
+			//importWorkflow();
+			commonActions.waitFor(1000);
+			importWorkflow();
+			if(commonActions.isElementPresent(ImortOverrideButton)) {
+				log.info("Override button is present on the popup " + ImortOverrideButton.toString());
+				logger.info("Oveerride button is present on he popup " + ImortOverrideButton.toString());
+				commonActions.click(ImortOverrideButton);
+				log.info("Clicked on the override button " + ImortOverrideButton.toString());
+				logger.info("Clicked on the override button " + ImortOverrideButton.toString());
+			}else {
+				log.info("Override Button is not present on the popup " + ImortOverrideButton.toString());
+				logger.info("Override button is not present on the popup " + ImortOverrideButton.toString());
+			}
+			commonActions.waitFor(1000);
+	}
+	
+	public void importNew() throws AWTException {
+		
+		//importWorkflow();
+		commonActions.waitFor(1000);
+		importWorkflow();
+		if(commonActions.isElementPresent(ImortNewButtonOnPopup)) {
+			log.info("Import new button is present on the popup " + ImortNewButtonOnPopup.toString());
+			logger.info("Import new button is present on he popup " + ImortNewButtonOnPopup.toString());
+			commonActions.click(ImortNewButtonOnPopup);
+			log.info("Clicked on the import new button " + ImortNewButtonOnPopup.toString());
+			logger.info("Clicked on the import new button " + ImortNewButtonOnPopup.toString());
+		}else {
+			log.info("Import New Button is not present on the popup " + ImortNewButtonOnPopup.toString());
+			logger.info("Import New button is not present on the popup " + ImortNewButtonOnPopup.toString());
+		}
+		commonActions.waitFor(1000);
 	}
 	
 	public void verifyOnRingEvent() {
@@ -734,6 +801,26 @@ public class PopflowHomePage extends TestBase{
 			return false;
 		}
 			
+	}
+	
+	public boolean ImportWorkflowFlag() {
+		commonActions.waitUntilElementIsVisible(driver, 60, ImportWorkflowTag);
+		if(commonActions.isElementPresent(ImportWorkflowTag))
+		{
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean ImportNewWorkflowFlag() {
+		commonActions.waitUntilElementIsVisible(driver, 60, ImportNewWorkflowTag);
+		if(commonActions.isElementPresent(ImportNewWorkflowTag))
+		{
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	public boolean waitTillLoadPage() {

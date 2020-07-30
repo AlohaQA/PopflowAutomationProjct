@@ -6,7 +6,11 @@
 		<class
 				name="com.popflow.Automation.testcases.PopFlowHomePageTest">
 				<methods>
-					<include name = "verifyImportWorkflowFunctionality">
+				<include name = "verifyImportWorkflowFunctionality">
+					</include>
+					<include name = "verifyImportOverrideWorkflowFunctionality">
+					</include>
+					<include name = "verifyImportWorkflowFunctionalityWithOptionNew">
 					</include>
 				</methods>
 			</class>

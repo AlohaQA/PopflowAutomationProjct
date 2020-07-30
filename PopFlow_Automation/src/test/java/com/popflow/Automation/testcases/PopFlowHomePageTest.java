@@ -1,5 +1,7 @@
 package com.popflow.Automation.testcases;
 
+import java.awt.AWTException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
@@ -184,10 +186,32 @@ public class PopFlowHomePageTest extends TestBase {
 	}
 	
 	@Test
-	public void verifyImportWorkflowFunctionality() {
+	public void verifyImportWorkflowFunctionality() throws AWTException {
 		logger = extent.createTest("Verify that user is able to import the workflow");
 		this.AppManagerLogin();
 		PFHomePage.importWorkflow();
-		
+		commonActions.verifyAssertTrue(PFHomePage.ImportWorkflowFlag(), 
+				"User is able to import a workflow", 
+				"User is not able to import the workflow");
+	}
+	
+	@Test
+	public void verifyImportOverrideWorkflowFunctionality() throws AWTException {
+		logger = extent.createTest("Verify the override button functionality while imoporting workflow. ");
+		this.AppManagerLogin();
+		PFHomePage.importOverride();
+		commonActions.verifyAssertTrue(PFHomePage.ImportWorkflowFlag(), 
+				"User is able to override the existing workflow after import. ", 
+				"User is not able to override the existing workflow after import. ");
+	}
+	
+	@Test
+	public void verifyImportWorkflowFunctionalityWithOptionNew() throws AWTException {
+		logger = extent.createTest("Verify the import new button functionality while importing workflow. ");
+		this.AppManagerLogin();
+		PFHomePage.importNew();
+		commonActions.verifyAssertTrue(PFHomePage.ImportNewWorkflowFlag(), 
+				"User is able to import new workflow ", 
+				"User is not able to import new workflow");
 	}
 }
