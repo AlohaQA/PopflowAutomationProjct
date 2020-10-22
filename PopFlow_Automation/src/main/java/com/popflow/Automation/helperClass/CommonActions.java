@@ -104,6 +104,17 @@ public class CommonActions {
 			}
 	}
 	
+	public void RightClick(WebElement element) {
+		  Actions actions = new Actions(driver);
+		 
+		  if(isElementPresent(element)) {
+			  actions.contextClick(element).perform();
+			}else {
+				log.info("Element is not present and click on element is not performed");
+				logger.info("Element is not present and click on element is not performed");
+			}
+	}
+	
 	public  WebElement Importclick(WebElement element) {
 		if(isElementPresent(element)) {
 			element.click();

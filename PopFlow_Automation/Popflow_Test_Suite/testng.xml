@@ -10,8 +10,6 @@
 					</include>
 					<include name ="verifyLoginWithValidCRMCredentials">
 					</include>
-					<include name = "verifyloginWithInvalidCRMCredentials">
-					</include>
 					<include name = "verifyAddNewWorkflowFunctionality">
 					</include>
 					<include name = "verifyEditWorkflowFunctionality">
@@ -20,19 +18,42 @@
 					</include>
 					<include name = "verifyDuplicateWorkflowFuncttionality">
 					</include>
-					<include name = "verifyPopflowEvents">
+					<include name = "verifyAddNewCustomEventFunctionality">
 					</include>
-					<include name = "verifyCRMInsatnceNavigation">
+					<include name = "verifyEditWorkflowFunctionality">
+					</include>
+					<include name = "verifyEditWorkflowDescriptionFunctionality">
+					</include>
+					<include name = "verifyErroMessageForLongWFDescrition">
 					</include>
 					<include name = "verifyErroMessageForLongWFName">
 					</include>
+					<include name = "verifyPopflowEvents">
+					</include>
+					<include name = "verifyImportWorkflowFunctionality">
+					</include>
+					<include name = "verifyImportOverrideWorkflowFunctionality">
+					</include>
+					<include name = "verifyImportWorkflowFunctionalityWithOptionNew">
+					</include>
+					<include name = "verifyCRMInsatnceNavigation">
+					</include>
+					
 				</methods>
 			</class>
 			
 		<class
 				name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
 				<methods>
-					<include name = "verifyCreateContactActivity">
+					<include name = "verifyAddingCreateWorkspaceActivity">
+					</include>
+					<include name = "verifyEditActivity">
+					</include>
+					<include name = "verifyDeleteActivity">
+					</include>
+					<include name = "verifyPinActivity">
+					</include>
+					<include name = "verifyCopyActivity">
 					</include>
 				</methods>
 			</class>

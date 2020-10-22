@@ -6,10 +6,10 @@
       <class name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
         <methods>
           <include name="setuSuite"/>
+          <include name="verifyOnRecordSaveEvent"/>
           <include name="initialization"/>
           <include name="beforeclass"/>
           <include name="afterSuite"/>
-          <include name="verifyCreateCOntactActivity"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.popflow.Automation.testcases.CreateWorkspaceActivityTest -->

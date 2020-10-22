@@ -1,8 +1,54 @@
-2020-07-28 08:03:20 INFO  pageObjects.AppManagerLoginPage:53 - Entered Email :anup.lakhe@openmethods.com
-2020-07-28 08:03:20 INFO  pageObjects.AppManagerLoginPage:59 - Entered Password :Aloha@7890
-2020-07-28 08:03:24 INFO  helperClass.CommonActions:317 - PASS :User is login successfully to App Manager
-2020-07-28 08:03:24 INFO  pageObjects.AppManagerHomePage:49 - Clicked on the expand-collapse button [[ChromeDriver: chrome on WINDOWS (a07429d4fd980253f7a092ec10f34e24)] -> xpath: //img[@class='expand-collapse-icon']]
-2020-07-28 08:03:24 INFO  pageObjects.AppManagerHomePage:56 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
-2020-07-28 08:03:27 INFO  helperClass.CommonActions:317 - PASS :Popflow CRM Instance page displayed
-2020-07-28 08:03:27 INFO  pageObjects.AppManagerHomePage:64 - Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'
-2020-07-28 08:03:32 INFO  pageObjects.PopflowHomePage:426 - Import button is present[[ChromeDriver: chrome on WINDOWS (a07429d4fd980253f7a092ec10f34e24)] -> xpath: //i[@class='material-icons clickable'][contains(text(),'system_update_alt')]]
+2020-10-21 11:04:59 INFO  pageObjects.AppManagerLoginPage:53 - Entered Email :anup.lakhe@openmethods.com
+2020-10-21 11:04:59 INFO  pageObjects.AppManagerLoginPage:59 - Entered Password :Aloha@7890
+2020-10-21 11:05:21 INFO  helperClass.CommonActions:328 - PASS :User is login successfully to App Manager
+2020-10-21 11:05:21 INFO  pageObjects.AppManagerHomePage:49 - Clicked on the expand-collapse button [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: //img[@class='expand-collapse-icon']]
+2020-10-21 11:05:21 INFO  pageObjects.AppManagerHomePage:56 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
+2020-10-21 11:05:28 INFO  helperClass.CommonActions:328 - PASS :Popflow CRM Instance page displayed
+2020-10-21 11:05:28 INFO  pageObjects.AppManagerHomePage:64 - Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'
+2020-10-21 11:05:29 INFO  pageObjects.PopflowHomePage:292 - Clicked on the add new workflow button[[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: //i[@class='material-icons clickable'][contains(text(),'add')]]
+2020-10-21 11:05:29 INFO  pageObjects.PopflowHomePage:296 - Entered New Workflow Name :Create Workspace
+2020-10-21 11:05:29 INFO  pageObjects.PopflowHomePage:300 - Clicked on the add new workflow save button[[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[3]/button[2]]
+2020-10-21 11:05:33 INFO  helperClass.BrowserHelper:57 - 
+2020-10-21 11:05:33 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-10-21 11:05:33 INFO  helperClass.BrowserHelper:69 - 1
+2020-10-21 11:05:38 INFO  pageObjects.OSCLoginPage:55 - Entered CRM Username :anup1
+2020-10-21 11:05:38 INFO  pageObjects.OSCLoginPage:61 - Entered CRM Password :Open1234
+2020-10-21 11:06:13 INFO  pageObjects.PopflowHomePage:519 - User is logged in to the OSC 
+2020-10-21 11:06:13 INFO  helperClass.BrowserHelper:57 - 
+2020-10-21 11:06:13 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-10-21 11:06:13 INFO  helperClass.BrowserHelper:69 - 0
+2020-10-21 11:06:13 INFO  pageObjects.PopflowHomePage:326 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
+2020-10-21 11:06:15 INFO  pageObjects.PopflowHomePage:199 - Clicked on the create workspace workflow button [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/h6]
+2020-10-21 11:06:15 INFO  pageObjects.PopflowHomePage:203 - Clicked on the workflow design button Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/a'
+2020-10-21 11:06:28 INFO  helperClass.CommonActions:328 - PASS :User able to search the create workspace activity in the activity list
+2020-10-21 11:06:28 INFO  pageObjects.PopflowHomePage:216 - Clicked on the create workspace activity from search Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activities-sidebar/div[3]/div/div/ul/li'
+2020-10-21 11:06:29 INFO  pageObjects.PopflowHomePage:289 - Clicked on the added create worksace activity [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[1]/div]
+2020-10-21 11:06:31 INFO  pageObjects.PopflowHomePage:293 - Clicked on the entitiy textbox [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[1]/input]
+2020-10-21 11:06:31 INFO  pageObjects.PopflowHomePage:297 - Contact entity is selected form the drop down [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[1]/input]
+2020-10-21 11:06:32 INFO  pageObjects.PopflowHomePage:301 - Clicked on the close button from designer Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/i'
+2020-10-21 11:06:37 INFO  helperClass.CommonActions:328 - PASS :User is able to add multiple entity fields for the contact workspace
+2020-10-21 11:06:40 INFO  pageObjects.PopflowHomePage:532 - Clicked on the Add event button from designer [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/i]
+2020-10-21 11:06:42 INFO  pageObjects.PopflowHomePage:539 - Clicked on the close button from designer Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/i'
+2020-10-21 11:06:45 INFO  helperClass.CommonActions:328 - PASS :User able to search the create workspace activity in the activity list
+2020-10-21 11:06:45 INFO  pageObjects.PopflowHomePage:80 - Clicked on the create workspace activity from search Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activities-sidebar/div[3]/div/div/ul/li/div'
+2020-10-21 11:06:47 INFO  pageObjects.PopflowHomePage:88 - Entered title of the dynamic UI activity  
+2020-10-21 11:06:52 INFO  pageObjects.PopflowHomePage:97 - Entered Data in the dynamic UI text field 
+2020-10-21 11:06:55 INFO  pageObjects.PopflowHomePage:102 - Switched to original frmae 
+2020-10-21 11:06:58 INFO  pageObjects.PopflowHomePage:109 - Clicked on the Dynamic Ui editor close button Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/i'
+2020-10-21 11:07:05 INFO  helperClass.BrowserHelper:57 - 
+2020-10-21 11:07:05 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-10-21 11:07:05 INFO  helperClass.BrowserHelper:69 - 1
+2020-10-21 11:07:05 INFO  helperClass.CommonActions:190 - Text is:	First Last
+2020-10-21 11:07:05 INFO  pageObjects.PopflowHomePage:554 - Text is :First Last
+2020-10-21 11:07:05 INFO  helperClass.CommonActions:328 - PASS :Contact is created using create workspace activity
+2020-10-21 11:07:07 INFO  helperClass.CommonActions:190 - Text is:	DynamicUI Test
+2020-10-21 11:07:07 INFO  pageObjects.PopflowHomePage:563 - Text is :DynamicUI Test
+2020-10-21 11:07:07 INFO  helperClass.BrowserHelper:57 - 
+2020-10-21 11:07:07 INFO  helperClass.BrowserHelper:64 - Window Ids: 2
+2020-10-21 11:07:07 INFO  helperClass.BrowserHelper:69 - 0
+2020-10-21 11:07:07 INFO  pageObjects.PopflowHomePage:326 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
+2020-10-21 11:07:07 INFO  pageObjects.PopflowHomePage:735 - Instance button is present on the popflow studio [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: //a[contains(text(),'Instances')]]
+2020-10-21 11:07:07 INFO  pageObjects.PopflowHomePage:738 - Clicked on the instance button [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: //a[contains(text(),'Instances')]]
+2020-10-21 11:07:09 INFO  helperClass.CommonActions:134 - Button clicked for location by hovering on it=>[[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i]
+2020-10-21 11:07:09 INFO  pageObjects.PopflowHomePage:430 - Clicked on delete workflow button [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i]
+2020-10-21 11:07:09 INFO  pageObjects.PopflowHomePage:434 - Clicked on delete workflow button on popup [[ChromeDriver: chrome on WINDOWS (8228311df0814f5b894cd8071d375cc8)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[2]/div/div/div[3]/button[2]]

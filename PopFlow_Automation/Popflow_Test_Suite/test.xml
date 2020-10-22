@@ -4,16 +4,13 @@
 <test name="Verify Cloud Popflow Test Cases">
 		<classes>
 		<class
-				name="com.popflow.Automation.testcases.PopFlowHomePageTest">
+				name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
 				<methods>
-				<include name = "verifyImportWorkflowFunctionality">
-					</include>
-					<include name = "verifyImportOverrideWorkflowFunctionality">
-					</include>
-					<include name = "verifyImportWorkflowFunctionalityWithOptionNew">
-					</include>
+				<include name = "verifyAddingCreateWorkspaceActivity">
+				</include>
 				</methods>
-			</class>
+			
+		</class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

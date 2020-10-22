@@ -1,5 +1,5 @@
 package com.popflow.Automation.testcases;
 
-public class OpenWorkkspaceActivityTest {
+public class OpenWorkspaceActivityTest {
 
 }

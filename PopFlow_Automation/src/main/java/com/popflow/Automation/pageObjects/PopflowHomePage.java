@@ -143,28 +143,28 @@ public class PopflowHomePage extends TestBase{
 	@FindBy(xpath = "//i[@class='material-icons clickable'][contains(text(),'system_update_alt')]")
 	WebElement ImportActivityButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'On Hold')]")
+	@FindBy(xpath = "//div[contains(text(),'On Hold')]")
 	WebElement OnHoldEventButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'On End')]")
+	@FindBy(xpath = "//div[contains(text(),'On End')]")
 	WebElement OnEndEventButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'On Ring')]")
+	@FindBy(xpath = "//div[contains(text(),'On Ring')]")
 	WebElement OnRingEventButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'On Answer')]")
+	@FindBy(xpath = "//div[contains(text(),'On Answer')]")
 	WebElement OnAnswerButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'Chat Ring')]")
+	@FindBy(xpath = "//div[contains(text(),'Chat Ring')]")
 	WebElement ChatRingEventButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'Chat Accept')]")
+	@FindBy(xpath = "//div[contains(text(),'Chat Accept')]")
 	WebElement ChatAcceptEventButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'Chat Reject')]")
+	@FindBy(xpath = "//div[contains(text(),'Chat Reject')]")
 	WebElement ChatRejectEventButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'On Chat End')]")
+	@FindBy(xpath = "//div[contains(text(),'On Chat End')]")
 	WebElement ChatEndEventButton;
 	
 	@FindBy(xpath = "//i[contains(text(),'info')]")
@@ -175,6 +175,9 @@ public class PopflowHomePage extends TestBase{
 	
 	@FindBy(xpath = "//a[contains(text(),'Instances')]")
 	WebElement InstanceButton;
+	
+	@FindBy(xpath = "//a[contains(text(),'isv-19a-openmethods')]")
+	WebElement PopflowHomePageButton;
 	
 	@FindBy(xpath = "//h6[contains(text(),'Import Workflow Test')]")
 	WebElement ImportWorkflowTag;
@@ -243,11 +246,11 @@ public class PopflowHomePage extends TestBase{
 	public void getInvalidCredentialsErrorMsg() {
 		commonActions.waitUntilElementIsVisible(driver, 60, InvalidOSCCredErrorMessage);
 		String ErrorMssg = commonActions.getText(InvalidOSCCredErrorMessage);
-		log.info("Error message when entered invalid CRM credentials is "+ ErrorMssg);
-		logger.info("Error message when entered invalid CRM credentials is "+ ErrorMssg);
-		commonActions.verifyAssertTrue(ErrorMssg.equalsIgnoreCase("×\n" + 
+		log.info("Error message when entered invalid CRM credentials is:"+ ErrorMssg);
+		logger.info("Error message when entered invalid CRM credentials is:"+ ErrorMssg);
+		commonActions.verifyAssertTrue(ErrorMssg.equalsIgnoreCase("	×\n" + 
 				"Error!\n" + 
-				"Request failed with status code 401."), 
+				"Unable to authenticate this user. Please check username and Password."), 
 				
 				"Showing correct error message for Invalid OSC credentials", 
 				"Showing incorrect error message for Invalid OSC credentials");
@@ -363,10 +366,10 @@ public class PopflowHomePage extends TestBase{
 			commonActions.waitUntilElementIsVisible(driver, 60, WorkflowNameErrorMessage);
 			String ErrorMsg = commonActions.getText(WorkflowNameErrorMessage);
 			log.info("Error message when entered workflow name more than 50 characters : "+ ErrorMsg);
-			logger.info("Error message when entered workflow name more than 50 characters : *"+ ErrorMsg);
+			logger.info("Error message when entered workflow name more than 50 characters : "+ ErrorMsg);
 
 			commonActions.verifyAssertTrue(ErrorMsg.equalsIgnoreCase(
-					"Workflow name cannot be larger than 50 characters."),
+					"Workflow name cannot be larger than 45 characters."),
 					
 					"Showing correct error message after entering workflow name more than 50 characters", 
 					"Showing incorrect error message after entering workflow name more than 50 characters");
@@ -423,14 +426,14 @@ public class PopflowHomePage extends TestBase{
 		this.mouseHoverOnWorkFlow();
 		commonActions.waitUntilElementIsVisible(driver, 60, DeleteWorkFlowButton);
 		commonActions.clickbymouseHover(DeleteWorkFlowButton);
-		commonActions.click(DeleteWorkFlowButton);
-		log.info("Clicked on deletee workflow button " + DeleteWorkFlowButton.toString());
-		logger.info("Clicked on delete workflow buetton " + DeleteWorkFlowButton.toString());
+//		commonActions.click(DeleteWorkFlowButton);
+		log.info("Clicked on delete workflow button " + DeleteWorkFlowButton.toString());
+		logger.info("Clicked on delete workflow button " + DeleteWorkFlowButton.toString());
 		commonActions.waitUntilElementIsVisible(driver, 60, DeleteWorkFlowButtonOnPopup);
 		commonActions.click(DeleteWorkFlowButtonOnPopup);
 		log.info("Clicked on delete workflow button on popup " + DeleteWorkFlowButtonOnPopup.toString());
 		logger.info("Clicked on delete workflow button on popup " + DeleteWorkFlowButtonOnPopup.toString());
-		//commonActions.waitUntilElementIsVisible(driver, 60, DeleteWorkFlowButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
 	}	
 	
 	public void importWorkflow() throws AWTException {
@@ -516,8 +519,8 @@ public class PopflowHomePage extends TestBase{
 		else {
 			log.info("On Ring event is not present" + OnRingEventButton.toString());
 			logger.info("On Ring event is not present" + OnRingEventButton.toString());
-		}	
 	}
+}
 	
 	public void verifyOnAnswerEvent() {
 		commonActions.waitUntilElementIsVisible(driver, 60, OnAnswerButton);
@@ -717,6 +720,26 @@ public class PopflowHomePage extends TestBase{
 			commonActions.waitUntilElementIsVisible(driver, 60, InstanceButton);
 			log.info("Instance button displayed on the popflow studio " + InstanceButton);
 			logger.info("Instance button displayed on the popflow studio " + InstanceButton);	
+		}else {
+			log.info("Instance button is not present on the popflow studio " + InstanceButton);
+			logger.info("Instance button is not present on the popflow studio " + InstanceButton);
+		}
+		
+	}
+	
+	
+	//This method is created for temporary delete of the created workflows
+	public void deleteCreatedWorkflow() {
+		commonActions.waitUntilElementIsVisible(driver, 60, PopflowHomePageButton);
+		if(commonActions.isElementPresent(PopflowHomePageButton)) {
+			log.info("Instance button is present on the popflow studio " + InstanceButton);
+			logger.info("Instance button is present on the popflow studio " + InstanceButton);
+			commonActions.click(PopflowHomePageButton);
+			log.info("Clicked on the instance button " + InstanceButton);
+			logger.info("Clicked on the instance button " + InstanceButton);
+			commonActions.waitUntilElementIsVisible(driver, 60, InstanceButton);
+			this.deleteWorkflow();
+			commonActions.waitFor(2000);
 		}else {
 			log.info("Instance button is not present on the popflow studio " + InstanceButton);
 			logger.info("Instance button is not present on the popflow studio " + InstanceButton);

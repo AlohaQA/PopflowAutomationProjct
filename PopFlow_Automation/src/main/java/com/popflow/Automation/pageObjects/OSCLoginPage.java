@@ -34,6 +34,14 @@ public class OSCLoginPage extends TestBase{
 	@FindBy(xpath = "//*[@id=\"logo\"]")
 	WebElement oscShieldButton;
 	
+	@FindBy(xpath = "/html/body/app-root/login/login-form/form/div/div/div[1]/label")
+	WebElement EnvironmentNameLabel;
+	
+	@FindBy(xpath = "/html/body/app-root/div/button/i")
+	WebElement SettingButton;
+	
+	private String mediaBarIFrameName = "sidePaneBrowserExtension";
+	
 	public OSCLoginPage(WebDriver driver, ExtentTest logger) {
 		this.driver = driver;
 		this.logger = logger;
@@ -65,7 +73,7 @@ public class OSCLoginPage extends TestBase{
 	}
 	
 	public void switchToOSCWindow() {
-		commonActions.waitFor(1000);
+		commonActions.waitFor(4000);
 		browserHelper.SwitchToWindow(1);
 	}
 	
@@ -75,7 +83,15 @@ public class OSCLoginPage extends TestBase{
 		enterCRMPassword(prop.getProperty("crmPwd"));
 		commonActions.click(oscLoginPageLoginBtn);
 		waitTillLoadPage();
-		commonActions.waitFor(7000);
+		//this.switchToMediaBarIFrame();
+		//commonActions.waitUntilElementIsVisible(driver, 60, EnvironmentNameLabel);
+		commonActions.waitFor(10000);
+	}
+	
+	public void switchToMediaBarIFrame() {
+		browserHelper.switchToFrame(mediaBarIFrameName);
+	//	commonActions.waitUntilElementIsVisible(driver, 60, mediaBarLoginBtn);
+		commonActions.waitFor(5000);
 	}
 
 	public boolean waitTillLoadPage() {

@@ -90,7 +90,8 @@ public class TestBase{
 				logger.skip(result.getThrowable());
 			}
 			
-			driver.close();
+			//driver.close();
+			driver.quit();
 		}
 		
 		@AfterSuite
