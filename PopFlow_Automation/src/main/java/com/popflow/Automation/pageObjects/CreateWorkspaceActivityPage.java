@@ -55,7 +55,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	WebElement InitialActivityButton;
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper[2]/ul/li/div/div/div")
-	WebElement OnRecordSaveEventButton;
+	WebElement OnEventButton;
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/activities-sidebar/div[2]/div[1]/div/img")
 	WebElement CloseButtonFromActivityList;
@@ -165,7 +165,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	@FindBy(xpath = "//button[contains(text(),'Delete')]")
 	WebElement DeleteButtonOnPopup;
 	
-	@FindBy(xpath = "//a[contains(text(),'Paste Create workspace')]")
+	@FindBy(xpath = "//a[contains(text(),'Paste Create Contact')]")
 	WebElement Pasteoption;
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper/ul/li/div/div/div")
@@ -175,13 +175,22 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	WebElement ClosePinnedActivityButton;
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper[2]/ul/li/div/div[2]/flow-chart/div[1]/div/div/div/div/span/div")
-	WebElement OnRecordSaveEventActivity;
+	WebElement OnEventActivity;
 	
 	@FindBy(xpath = "//span[@id='ExtensibilityModalWindowViewModeldialog-title']")
 	WebElement DynamicUITitle;
 	
 	@FindBy(xpath = "//button[@class='ws-toolbar-button Save']")
-	WebElement SaveContactButton;
+	WebElement SaveContactButtonFromOSC;
+	
+	@FindBy(xpath = "//i[@class='fa fa-times fa-fw oj-fwk-icon']")
+	WebElement CloseContactWorksaceButtonFromOSC;
+	
+	@FindBy(xpath = "//button[@class='ws-toolbar-button Refresh']")
+	WebElement RefershButtonFromOSC;
+	
+	@FindBy(xpath = "//button[@title='Close']")
+	WebElement CloseButtonOnDynamicUIPopup;
 	
 	public CreateWorkspaceActivityPage(WebDriver driver, ExtentTest logger) {
 		this.driver = driver;
@@ -210,8 +219,8 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.enterData(SearchActivityTextBox, CreateWorkspaceString);
 		commonActions.waitFor(1000);
 		commonActions.verifyAssertTrue(commonActions.isElementPresent(CreateWorkspaceSearchResult), 
-				"User able to search the create workspace activity in the activity list", 
-				"User is not able  to serach the create worksace activity in the activity list");
+				" User able to search the create workspace activity in the activity list", 
+				" User is not able  to serach the create worksace activity in the activity list");
 		commonActions.click(CreateWorkspaceSearchResult);
 		log.info("Clicked on the create workspace activity from search " + CreateWorkspaceSearchResult);
 		logger.info("Clicked on the create workspace activity from search " + CreateWorkspaceSearchResult);
@@ -248,8 +257,8 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		String text = commonActions.getText(OSCFirstName);
 		log.info("Text is :" + text);
 		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
-				"Contact is created using create workspace activity", 
-				"Unable to create contact using create workspace activity");
+				" Contact is created using create workspace activity", 
+				" Unable to create contact using create workspace activity");
 		OSCLogin.switchBackToPopflowWindow();
 		switchToPopflowIFrmae();
 	}
@@ -336,6 +345,8 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.enterData(PropertyTextBox, "Name.First");
 		commonActions.waitUntilElementIsVisible(driver, 60, EntityValueTextBox);
 		commonActions.enterData(EntityValueTextBox, "First");
+		log.info("Entered First Name in the property field ");
+		logger.info("Entered First Name in the property field ");
 		commonActions.waitFor(1000);
 		
 		commonActions.click(AddEntityFieldButton);
@@ -344,17 +355,21 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.enterData(PropertyTextBox2, "Name.Last");
 		commonActions.waitUntilElementIsVisible(driver, 60, EntityValueTextBox2);
 		commonActions.enterData(EntityValueTextBox2, "Last");
+		log.info("Entered Last Name in the property field ");
+		logger.info("Entered Last Name in the property field ");
 		
 		commonActions.click(AddEntityFieldButton);
 		commonActions.waitUntilElementIsVisible(driver, 60, PropertyTextBox3);
 		commonActions.click(PropertyTextBox3);
 		commonActions.enterData(PropertyTextBox3, "Email.Addr");
 		commonActions.waitUntilElementIsVisible(driver, 60, EntityValueTextBox3);
-		commonActions.enterData(EntityValueTextBox3, "test"+Random.randomAlphaString(3)+"@om.com");
-		
+		String email = "test"+Random.randomAlphaString(3)+"@om.com";
+		commonActions.enterData(EntityValueTextBox3, email);
+		log.info("Entered email address in the property field :" + email);
+		logger.info("Entered email address in the property field :" + email);
 		commonActions.verifyAssertTrue(EntityValueTextBox3 != null, 
-				"User is able to add multiple entity fields for the contact workspace", 
-				"Unable to add multiple entitiy fields for the contact workspace");
+				" User is able to add multiple entity fields for the contact workspace", 
+				" Unable to add multiple entitiy fields for the contact workspace");
 		commonActions.waitFor(2000);
 	}
 	
@@ -390,9 +405,11 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	*/
 		commonActions.waitUntilElementIsVisible(driver, 60, IncidentCloseButton);
 		commonActions.verifyAssertTrue(commonActions.isElementPresent(IncidentCloseButton), 
-				"Incident is created using create workspace activity", 
-				"Unable to create Incident using create workspace activity");
+				" Incident is created using create workspace activity", 
+				" Unable to create Incident using create workspace activity");
 		
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
 	}
 	
 	public void addIncidentEntity() {
@@ -414,8 +431,8 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.enterData(EntityValueTextBox2, "BannerText");
 		
 		commonActions.verifyAssertTrue(EntityValueTextBox3 != null, 
-				"User is able to add multiple entity fields for the contact workspace", 
-				"Unable to add multiple entitiy fields for the contact workspace");
+				" User is able to add multiple entity fields for the contact workspace", 
+				" Unable to add multiple entitiy fields for the contact workspace");
 		commonActions.waitFor(2000);
 	}
 	
@@ -526,50 +543,269 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
 		commonActions.click(AddedCreateWorkspaceActivity);
 		addContactEntity();
-		
 		commonActions.waitUntilElementIsVisible(driver, 60, AddEventButton);
 		commonActions.click(AddEventButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, SelectEventButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(SelectEventButton), 
+				" Add Event Button is functional", 
+				" Add Event Button is not fuctional");
 		log.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
 		logger.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
-		commonActions.waitUntilElementIsVisible(driver, 60, SelectEventButton);
 		selectEvent(EventName);
 		
 		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
 		commonActions.click(CreateWorkspaceDesignerCloseButton);
 		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
 		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
-		commonActions.waitUntilElementIsVisible(driver, 60, OnRecordSaveEventButton);
-		commonActions.click(OnRecordSaveEventButton);
-		
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventButton);
+		commonActions.click(OnEventButton);
+		log.info("Clicked on the On Record Save button from designer " + OnEventButton);
+		logger.info("Clicked on the On Record Save button from designer " + OnEventButton);
 		
 		DynamicUI.SelectDynamicUIActivity(DynamicUIString);
-		commonActions.waitUntilElementIsVisible(driver, 60, OnRecordSaveEventActivity);
-		commonActions.click(OnRecordSaveEventActivity);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventActivity);
+		commonActions.click(OnEventActivity);
+		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
+		logger.info("Clicked on the On Record Save button from designer " + OnEventActivity);
 		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
 		
 		runTest();
 		OSCLogin.switchToOSCWindow();
 		commonActions.waitUntilElementIsVisible(driver, 60, OSCFirstName);
 		String text = commonActions.getText(OSCFirstName);
-		log.info("Text is :" + text);
+		log.info("Text on the created contact is :" + text);
+		logger.info("Text on the created contact is :" + text);
 		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
-				"Contact is created using create workspace activity", 
-				"Unable to create contact using create workspace activity");
+				" Contact is created using create workspace activity", 
+				" Unable to create contact using create workspace activity");
 		
-		commonActions.waitUntilElementIsVisible(driver, 60, SaveContactButton);
-		commonActions.click(SaveContactButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, SaveContactButtonFromOSC);
+		commonActions.click(SaveContactButtonFromOSC);
+		log.info("Clicked on the save button on the workspace in the OSC " + SaveContactButtonFromOSC);
+		logger.info("Clicked on the save button on the workspace in the OSC " + SaveContactButtonFromOSC);
 		commonActions.waitUntilElementIsVisible(driver, 60, DynamicUITitle);
 		String text1 = commonActions.getText(DynamicUITitle);
-		log.info("Text is :" + text1);
+		log.info("Text on the dynamic UI activity title is :" + text1);
+		logger.info("Text on the dynamic UI activity title is :" + text1);
+		commonActions.verifyAssertTrue(text1.equalsIgnoreCase("DynamicUI Test"), 
+				 " On Record Save event is working", 
+				 " On Record Save event is not working");
 		OSCLogin.switchBackToPopflowWindow();
 		switchToPopflowIFrmae(); 
+	}
+	
+	public void recordCloseEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
+		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
+		log.info("User is logged in to the OSC ");
+		logger.info("User is logged in to the OSC ");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
 		
+		selectContactWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		addContactEntity();
+		commonActions.waitUntilElementIsVisible(driver, 60, AddEventButton);
+		commonActions.click(AddEventButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, SelectEventButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(SelectEventButton), 
+				" Add Event Button is functional", 
+				" Add Event Button is not fuctional");
+		log.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
+		selectEvent(EventName);
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventButton);
+		commonActions.click(OnEventButton);
+		log.info("Clicked on the On Record close button from designer " + OnEventButton);
+		logger.info("Clicked on the On Record close button from designer " + OnEventButton);
+		
+		DynamicUI.SelectDynamicUIActivity(DynamicUIString);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventActivity);
+		commonActions.click(OnEventActivity);
+		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
+		logger.info("Clicked on the activity added on the On Record Save event " + OnEventActivity);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		
+		runTest();
+		OSCLogin.switchToOSCWindow();
+		commonActions.waitUntilElementIsVisible(driver, 60, OSCFirstName);
+		String text = commonActions.getText(OSCFirstName);
+		log.info("Text on the created contact is :" + text);
+		logger.info("Text on the created contact is :" + text);
+		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
+				" Contact is created using create workspace activity", 
+				" Unable to create contact using create workspace activity");
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, SaveContactButtonFromOSC);
+		commonActions.click(SaveContactButtonFromOSC);
+		log.info("Clicked on the save contact button on the workspace in the OSC " + SaveContactButtonFromOSC);
+		logger.info("Clicked on the save contact button on the workspace in the OSC " + SaveContactButtonFromOSC);
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, RefershButtonFromOSC);
+		commonActions.waitFor(2000);
+		commonActions.click(CloseContactWorksaceButtonFromOSC);
+		log.info("Clicked on the close button on the workspace in the OSC " + CloseContactWorksaceButtonFromOSC);
+		logger.info("Clicked on the close button on the workspace in the OSC " + CloseContactWorksaceButtonFromOSC);
+		commonActions.waitUntilElementIsVisible(driver, 60, DynamicUITitle);
+		String text1 = commonActions.getText(DynamicUITitle);
+		log.info("Text on the dynamic UI activity title is :" + text1);
+		logger.info("Text on the dynamic UI activity title is :" + text1);
+		commonActions.verifyAssertTrue(text1.equalsIgnoreCase("DynamicUI Test"), 
+				 " On Record Close event is working", 
+				 " On Record Close event is not working");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae(); 
+	}
+	
+	public void ondataLoadedEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
+		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
+		log.info("User is logged in to the OSC ");
+		logger.info("User is logged in to the OSC ");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+		
+		selectContactWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		addContactEntity();
+		commonActions.waitUntilElementIsVisible(driver, 60, AddEventButton);
+		commonActions.click(AddEventButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, SelectEventButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(SelectEventButton), 
+				" Add Event Button is functional", 
+				" Add Event Button is not fuctional");
+		log.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
+		selectEvent(EventName);
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventButton);
+		commonActions.click(OnEventButton);
+		log.info("Clicked on the On Record close button from designer " + OnEventButton);
+		logger.info("Clicked on the On Record close button from designer " + OnEventButton);
+		
+		DynamicUI.SelectDynamicUIActivity(DynamicUIString);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventActivity);
+		commonActions.click(OnEventActivity);
+		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
+		logger.info("Clicked on the activity added on the On Record Save event " + OnEventActivity);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		
+		runTest();
+		OSCLogin.switchToOSCWindow();
+		commonActions.waitUntilElementIsVisible(driver, 60, CloseButtonOnDynamicUIPopup);
+		commonActions.click(CloseButtonOnDynamicUIPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, OSCFirstName);
+		String text = commonActions.getText(OSCFirstName);
+		log.info("Text on the created contact is :" + text);
+		logger.info("Text on the created contact is :" + text);
+		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
+				" Contact is created using create workspace activity", 
+				" Unable to create contact using create workspace activity");
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, CloseContactWorksaceButtonFromOSC);
+		commonActions.click(SaveContactButtonFromOSC);
+		log.info("Clicked on the save button on the workspace in the OSC " + SaveContactButtonFromOSC);
+		logger.info("Clicked on the save button on the workspace in the OSC " + SaveContactButtonFromOSC);
+		commonActions.waitUntilElementIsVisible(driver, 60, DynamicUITitle);
+		String text1 = commonActions.getText(DynamicUITitle);
+		log.info("Text on the dynamic UI activity title is :" + text1);
+		logger.info("Text on the dynamic UI activity title is :" + text1);
+		commonActions.verifyAssertTrue(text1.equalsIgnoreCase("DynamicUI Test"), 
+				 " On Data Loaded event is working", 
+				 " On Data Loaded event is not working");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae(); 
+	}
+	
+	public void onEditorLoadedEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
+		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
+		log.info("User is logged in to the OSC ");
+		logger.info("User is logged in to the OSC ");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+		
+		selectContactWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		addContactEntity();
+		commonActions.waitUntilElementIsVisible(driver, 60, AddEventButton);
+		commonActions.click(AddEventButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, SelectEventButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(SelectEventButton), 
+				" Add Event Button is functional", 
+				" Add Event Button is not fuctional");
+		log.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the Add event button from designer " + CreateWorkspaceDesignerCloseButton);
+		selectEvent(EventName);
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventButton);
+		commonActions.click(OnEventButton);
+		log.info("Clicked on the On Record close button from designer " + OnEventButton);
+		logger.info("Clicked on the On Record close button from designer " + OnEventButton);
+		
+		DynamicUI.SelectDynamicUIActivity(DynamicUIString);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnEventActivity);
+		commonActions.click(OnEventActivity);
+		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
+		logger.info("Clicked on the activity added on the On Record Save event " + OnEventActivity);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		
+		runTest();
+		OSCLogin.switchToOSCWindow();
+		
+	if(commonActions.isElementPresent(CloseButtonOnDynamicUIPopup)) {
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, CloseButtonOnDynamicUIPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, DynamicUITitle);
+		String text1 = commonActions.getText(DynamicUITitle);
+		log.info("Text on the dynamic UI activity title is :" + text1);
+		logger.info("Text on the dynamic UI activity title is :" + text1);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(CloseButtonOnDynamicUIPopup)&&text1.equalsIgnoreCase("DynamicUI Test"), 
+				"On Editor Loaded  Event is working" , 
+				"On Editor Loaded Event is not working"); 
+		commonActions.click(CloseButtonOnDynamicUIPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, OSCFirstName);
+		String text = commonActions.getText(OSCFirstName);
+		log.info("Text on the created contact is :" + text);
+		logger.info("Text on the created contact is :" + text);
+		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
+				" Contact is created using create workspace activity", 
+				" Unable to create contact using create workspace activity");
+		
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae(); 
+	}else {
+		commonActions.fail("Unable to execute On Editor Loaded Event");
+		log.info("Unable to execute On Editor Loaded Event");
+		logger.fail("Unable to execute On Editor Loaded Event");
+		}
 	}
 	
 	public void selectEvent(String EventName) {
 		
 		Select EventDropDown = new Select(SelectEventButton);
 		EventDropDown.selectByVisibleText(EventName);
+		log.info("Selected event from drop down is : " + EventName);
+		logger.info("Selected event from drop down is :" + EventName);
 		commonActions.waitFor(2000);
 	}
 	

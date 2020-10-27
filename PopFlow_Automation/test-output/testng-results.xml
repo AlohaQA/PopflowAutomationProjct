@@ -1,44 +1,525 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="30" passed="26">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="148401" started-at="2020-10-21T16:04:44Z" finished-at="2020-10-21T16:07:13Z">
+  <suite name="Suite" duration-ms="806099" started-at="2020-10-27T14:37:19Z" finished-at="2020-10-27T14:50:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="148401" started-at="2020-10-21T16:04:44Z" finished-at="2020-10-21T16:07:13Z">
-      <class name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
-        <test-method status="PASS" signature="setuSuite()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b]" name="setuSuite" is-config="true" duration-ms="109" started-at="2020-10-21T16:04:44Z" finished-at="2020-10-21T16:04:44Z">
+    <test name="Verify Cloud Popflow Test Cases" duration-ms="806099" started-at="2020-10-27T14:37:19Z" finished-at="2020-10-27T14:50:45Z">
+      <class name="com.popflow.Automation.testcases.PopFlowHomePageTest">
+        <test-method status="PASS" signature="setuSuite()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="setuSuite" is-config="true" duration-ms="110" started-at="2020-10-27T14:37:19Z" finished-at="2020-10-27T14:37:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setuSuite -->
-        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b]" name="initialization" is-config="true" duration-ms="14016" started-at="2020-10-21T16:04:44Z" finished-at="2020-10-21T16:04:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b]" name="beforeclass" is-config="true" duration-ms="0" started-at="2020-10-21T16:04:44Z" finished-at="2020-10-21T16:04:44Z">
+        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="beforeclass" is-config="true" duration-ms="0" started-at="2020-10-27T14:37:19Z" finished-at="2020-10-27T14:37:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method status="PASS" signature="verifyOnRecordSaveEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b]" name="verifyOnRecordSaveEvent" duration-ms="132952" started-at="2020-10-21T16:04:58Z" finished-at="2020-10-21T16:07:11Z">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4792" started-at="2020-10-27T14:37:19Z" finished-at="2020-10-27T14:37:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyOnRecordSaveEvent -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b]" name="tearDown" is-config="true" duration-ms="1415" started-at="2020-10-21T16:07:11Z" finished-at="2020-10-21T16:07:13Z">
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyPopflowVersion()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyPopflowVersion" duration-ms="7219" started-at="2020-10-27T14:37:24Z" finished-at="2020-10-27T14:37:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPopflowVersion -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="616" started-at="2020-10-27T14:37:31Z" finished-at="2020-10-27T14:37:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyOnRecordSaveEvent status=SUCCESS method=CreateWorkspaceActivityTest.verifyOnRecordSaveEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b] output={null}]]]>
+                <![CDATA[[TestResult name=verifyPopflowVersion status=SUCCESS method=PopFlowHomePageTest.verifyPopflowVersion()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@3dd4520b]" name="afterSuite" is-config="true" duration-ms="201" started-at="2020-10-21T16:07:13Z" finished-at="2020-10-21T16:07:13Z">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3901" started-at="2020-10-27T14:37:32Z" finished-at="2020-10-27T14:37:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyLoginWithValidCRMCredentials()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyLoginWithValidCRMCredentials" duration-ms="4390" started-at="2020-10-27T14:37:36Z" finished-at="2020-10-27T14:37:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithValidCRMCredentials -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="610" started-at="2020-10-27T14:37:40Z" finished-at="2020-10-27T14:37:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginWithValidCRMCredentials status=SUCCESS method=PopFlowHomePageTest.verifyLoginWithValidCRMCredentials()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4062" started-at="2020-10-27T14:37:41Z" finished-at="2020-10-27T14:37:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyAddNewWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyAddNewWorkflowFunctionality" duration-ms="7287" started-at="2020-10-27T14:37:45Z" finished-at="2020-10-27T14:37:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddNewWorkflowFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="641" started-at="2020-10-27T14:37:52Z" finished-at="2020-10-27T14:37:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddNewWorkflowFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyAddNewWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3830" started-at="2020-10-27T14:37:53Z" finished-at="2020-10-27T14:37:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyEditWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyEditWorkflowFunctionality" duration-ms="10689" started-at="2020-10-27T14:37:57Z" finished-at="2020-10-27T14:38:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEditWorkflowFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="751" started-at="2020-10-27T14:38:07Z" finished-at="2020-10-27T14:38:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyEditWorkflowFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyEditWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3950" started-at="2020-10-27T14:38:08Z" finished-at="2020-10-27T14:38:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyDeleteWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyDeleteWorkflowFunctionality" duration-ms="4413" started-at="2020-10-27T14:38:12Z" finished-at="2020-10-27T14:38:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteWorkflowFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="698" started-at="2020-10-27T14:38:16Z" finished-at="2020-10-27T14:38:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteWorkflowFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyDeleteWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4133" started-at="2020-10-27T14:38:17Z" finished-at="2020-10-27T14:38:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyDuplicateWorkflowFuncttionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyDuplicateWorkflowFuncttionality" duration-ms="8120" started-at="2020-10-27T14:38:21Z" finished-at="2020-10-27T14:38:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDuplicateWorkflowFuncttionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="603" started-at="2020-10-27T14:38:29Z" finished-at="2020-10-27T14:38:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDuplicateWorkflowFuncttionality status=SUCCESS method=PopFlowHomePageTest.verifyDuplicateWorkflowFuncttionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4129" started-at="2020-10-27T14:38:30Z" finished-at="2020-10-27T14:38:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyAddNewCustomEventFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyAddNewCustomEventFunctionality" duration-ms="7725" started-at="2020-10-27T14:38:34Z" finished-at="2020-10-27T14:38:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddNewCustomEventFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="682" started-at="2020-10-27T14:38:42Z" finished-at="2020-10-27T14:38:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddNewCustomEventFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyAddNewCustomEventFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4163" started-at="2020-10-27T14:38:42Z" finished-at="2020-10-27T14:38:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyEditWorkflowDescriptionFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyEditWorkflowDescriptionFunctionality" duration-ms="11255" started-at="2020-10-27T14:38:47Z" finished-at="2020-10-27T14:38:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEditWorkflowDescriptionFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="616" started-at="2020-10-27T14:38:58Z" finished-at="2020-10-27T14:38:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyEditWorkflowDescriptionFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyEditWorkflowDescriptionFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4084" started-at="2020-10-27T14:38:58Z" finished-at="2020-10-27T14:39:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyErroMessageForLongWFDescrition()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyErroMessageForLongWFDescrition" duration-ms="6237" started-at="2020-10-27T14:39:03Z" finished-at="2020-10-27T14:39:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErroMessageForLongWFDescrition -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="620" started-at="2020-10-27T14:39:09Z" finished-at="2020-10-27T14:39:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyErroMessageForLongWFDescrition status=SUCCESS method=PopFlowHomePageTest.verifyErroMessageForLongWFDescrition()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4124" started-at="2020-10-27T14:39:09Z" finished-at="2020-10-27T14:39:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyErroMessageForLongWFName()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyErroMessageForLongWFName" duration-ms="5604" started-at="2020-10-27T14:39:14Z" finished-at="2020-10-27T14:39:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErroMessageForLongWFName -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="610" started-at="2020-10-27T14:39:19Z" finished-at="2020-10-27T14:39:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyErroMessageForLongWFName status=SUCCESS method=PopFlowHomePageTest.verifyErroMessageForLongWFName()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="4137" started-at="2020-10-27T14:39:20Z" finished-at="2020-10-27T14:39:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyPopflowEvents()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyPopflowEvents" duration-ms="5624" started-at="2020-10-27T14:39:24Z" finished-at="2020-10-27T14:39:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPopflowEvents -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="628" started-at="2020-10-27T14:39:30Z" finished-at="2020-10-27T14:39:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPopflowEvents status=SUCCESS method=PopFlowHomePageTest.verifyPopflowEvents()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3940" started-at="2020-10-27T14:39:30Z" finished-at="2020-10-27T14:39:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyImportWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyImportWorkflowFunctionality" duration-ms="16663" started-at="2020-10-27T14:39:34Z" finished-at="2020-10-27T14:39:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyImportWorkflowFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="657" started-at="2020-10-27T14:39:51Z" finished-at="2020-10-27T14:39:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyImportWorkflowFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyImportWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3958" started-at="2020-10-27T14:39:51Z" finished-at="2020-10-27T14:39:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyImportOverrideWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyImportOverrideWorkflowFunctionality" duration-ms="19059" started-at="2020-10-27T14:39:55Z" finished-at="2020-10-27T14:40:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyImportOverrideWorkflowFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="604" started-at="2020-10-27T14:40:14Z" finished-at="2020-10-27T14:40:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyImportOverrideWorkflowFunctionality status=SUCCESS method=PopFlowHomePageTest.verifyImportOverrideWorkflowFunctionality()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3956" started-at="2020-10-27T14:40:15Z" finished-at="2020-10-27T14:40:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyImportWorkflowFunctionalityWithOptionNew()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyImportWorkflowFunctionalityWithOptionNew" duration-ms="18622" started-at="2020-10-27T14:40:19Z" finished-at="2020-10-27T14:40:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyImportWorkflowFunctionalityWithOptionNew -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="701" started-at="2020-10-27T14:40:38Z" finished-at="2020-10-27T14:40:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyImportWorkflowFunctionalityWithOptionNew status=SUCCESS method=PopFlowHomePageTest.verifyImportWorkflowFunctionalityWithOptionNew()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="initialization" is-config="true" duration-ms="3851" started-at="2020-10-27T14:40:38Z" finished-at="2020-10-27T14:40:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyCRMInsatnceNavigation()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="verifyCRMInsatnceNavigation" duration-ms="4709" started-at="2020-10-27T14:40:42Z" finished-at="2020-10-27T14:40:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCRMInsatnceNavigation -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="tearDown" is-config="true" duration-ms="705" started-at="2020-10-27T14:40:47Z" finished-at="2020-10-27T14:40:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCRMInsatnceNavigation status=SUCCESS method=PopFlowHomePageTest.verifyCRMInsatnceNavigation()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.popflow.Automation.testcases.PopFlowHomePageTest@627551fb]" name="afterSuite" is-config="true" duration-ms="236" started-at="2020-10-27T14:50:45Z" finished-at="2020-10-27T14:50:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
+      </class> <!-- com.popflow.Automation.testcases.PopFlowHomePageTest -->
+      <class name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="3901" started-at="2020-10-27T14:40:48Z" finished-at="2020-10-27T14:40:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="beforeclass" is-config="true" duration-ms="0" started-at="2020-10-27T14:40:48Z" finished-at="2020-10-27T14:40:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method status="PASS" signature="verifyAddingCreateWorkspaceActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyAddingCreateWorkspaceActivity" duration-ms="16777" started-at="2020-10-27T14:40:51Z" finished-at="2020-10-27T14:41:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddingCreateWorkspaceActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="617" started-at="2020-10-27T14:41:08Z" finished-at="2020-10-27T14:41:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddingCreateWorkspaceActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyAddingCreateWorkspaceActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="3881" started-at="2020-10-27T14:41:09Z" finished-at="2020-10-27T14:41:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyEditActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyEditActivity" duration-ms="21519" started-at="2020-10-27T14:41:13Z" finished-at="2020-10-27T14:41:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEditActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="618" started-at="2020-10-27T14:41:34Z" finished-at="2020-10-27T14:41:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyEditActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyEditActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="3847" started-at="2020-10-27T14:41:35Z" finished-at="2020-10-27T14:41:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyDeleteActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyDeleteActivity" duration-ms="19897" started-at="2020-10-27T14:41:39Z" finished-at="2020-10-27T14:41:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="617" started-at="2020-10-27T14:41:59Z" finished-at="2020-10-27T14:41:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyDeleteActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="3895" started-at="2020-10-27T14:41:59Z" finished-at="2020-10-27T14:42:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyPinActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyPinActivity" duration-ms="21264" started-at="2020-10-27T14:42:03Z" finished-at="2020-10-27T14:42:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPinActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="639" started-at="2020-10-27T14:42:24Z" finished-at="2020-10-27T14:42:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPinActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyPinActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="8036" started-at="2020-10-27T14:42:25Z" finished-at="2020-10-27T14:42:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyCopyActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyCopyActivity" duration-ms="21594" started-at="2020-10-27T14:42:33Z" finished-at="2020-10-27T14:42:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCopyActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="640" started-at="2020-10-27T14:42:55Z" finished-at="2020-10-27T14:42:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCopyActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyCopyActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="4159" started-at="2020-10-27T14:42:55Z" finished-at="2020-10-27T14:42:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyCreateContactActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyCreateContactActivity" duration-ms="63283" started-at="2020-10-27T14:42:59Z" finished-at="2020-10-27T14:44:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateContactActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="4056" started-at="2020-10-27T14:44:03Z" finished-at="2020-10-27T14:44:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCreateContactActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyCreateContactActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="4049" started-at="2020-10-27T14:44:07Z" finished-at="2020-10-27T14:44:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyCreateIncidentActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyCreateIncidentActivity" duration-ms="64818" started-at="2020-10-27T14:44:11Z" finished-at="2020-10-27T14:45:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateIncidentActivity -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="771" started-at="2020-10-27T14:45:16Z" finished-at="2020-10-27T14:45:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCreateIncidentActivity status=SUCCESS method=CreateWorkspaceActivityTest.verifyCreateIncidentActivity()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="3973" started-at="2020-10-27T14:45:16Z" finished-at="2020-10-27T14:45:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyOnRecordSaveEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyOnRecordSaveEvent" duration-ms="77815" started-at="2020-10-27T14:45:20Z" finished-at="2020-10-27T14:46:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOnRecordSaveEvent -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="764" started-at="2020-10-27T14:46:38Z" finished-at="2020-10-27T14:46:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyOnRecordSaveEvent status=SUCCESS method=CreateWorkspaceActivityTest.verifyOnRecordSaveEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="4057" started-at="2020-10-27T14:46:39Z" finished-at="2020-10-27T14:46:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyOnRecordCloseEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyOnRecordCloseEvent" duration-ms="78048" started-at="2020-10-27T14:46:43Z" finished-at="2020-10-27T14:48:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOnRecordCloseEvent -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="793" started-at="2020-10-27T14:48:01Z" finished-at="2020-10-27T14:48:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyOnRecordCloseEvent status=SUCCESS method=CreateWorkspaceActivityTest.verifyOnRecordCloseEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="4024" started-at="2020-10-27T14:48:02Z" finished-at="2020-10-27T14:48:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyOnDataLoadedEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyOnDataLoadedEvent" duration-ms="76913" started-at="2020-10-27T14:48:06Z" finished-at="2020-10-27T14:49:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOnDataLoadedEvent -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="838" started-at="2020-10-27T14:49:23Z" finished-at="2020-10-27T14:49:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyOnDataLoadedEvent status=SUCCESS method=CreateWorkspaceActivityTest.verifyOnDataLoadedEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="initialization()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="initialization" is-config="true" duration-ms="3925" started-at="2020-10-27T14:49:24Z" finished-at="2020-10-27T14:49:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method status="PASS" signature="verifyOnEditorLoadedEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="verifyOnEditorLoadedEvent" duration-ms="76900" started-at="2020-10-27T14:49:28Z" finished-at="2020-10-27T14:50:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOnEditorLoadedEvent -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920]" name="tearDown" is-config="true" duration-ms="775" started-at="2020-10-27T14:50:45Z" finished-at="2020-10-27T14:50:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyOnEditorLoadedEvent status=SUCCESS method=CreateWorkspaceActivityTest.verifyOnEditorLoadedEvent()[pri:0, instance:com.popflow.Automation.testcases.CreateWorkspaceActivityTest@2b552920] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.popflow.Automation.testcases.CreateWorkspaceActivityTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Verify Cloud Popflow Test Cases -->
+  </suite> <!-- Suite -->
 </testng-results>

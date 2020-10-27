@@ -239,7 +239,7 @@ public class CommonActions {
 	}
 
 	public void fail(String msg) {
-		logger.info(msg);
+		logger.info(failMsg (msg));
 	}
 
 	public void info(String msg) {

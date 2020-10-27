@@ -6,7 +6,7 @@
       <class name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
         <methods>
           <include name="setuSuite"/>
-          <include name="verifyAddingCreateWorkspaceActivity"/>
+          <include name="verifyCopyActivity"/>
           <include name="initialization"/>
           <include name="beforeclass"/>
           <include name="afterSuite"/>

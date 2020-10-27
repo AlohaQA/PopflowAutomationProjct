@@ -28,10 +28,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 	
 	public CreateWorkspaceActivityTest() {
 		super();
-		
-		
 	}
-
 	
 	public void AppManagerLoginAndCreateaWorkflow(){
 		commonActions = new CommonActions(driver,logger);
@@ -48,8 +45,8 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		PFHomePage = AMHomePage.clickOnDesignButton();
 		CreateWorkspace = PFHomePage.addNewWorkFlow(prop.getProperty("CreateWorkspaceString"));
 	}
-
-	//@Test
+	
+	@Test
 	public void verifyAddingCreateWorkspaceActivity() {
 		logger = extent.createTest("Verify user is able to add create workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -60,7 +57,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		PFHomePage.deleteCreatedWorkflow();
 	}
 	
-	//@Test()
+	@Test
 	public void verifyCreateContactActivity() {
 		logger = extent.createTest("Verify Create Contact activity");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -68,7 +65,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		PFHomePage.deleteCreatedWorkflow();
 	}
 	
-	//@Test()
+	@Test
 	public void verifyCreateIncidentActivity() {
 		logger = extent.createTest("Verify Create Incident activity");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -81,12 +78,54 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		logger = extent.createTest("Verify Create contact activity with On Record Save event ");
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.recordSaveEvent(prop.getProperty("CreateWorkspaceString"), 
-										prop.getProperty("EventName"), 
+										prop.getProperty("OnRecordSaveEvent"), 
 										prop.getProperty("DynamicUIString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
+				"User is able to execute the On Record Save Event ", 
+				"Unable to execcute the On Record Save Event ");
 		PFHomePage.deleteCreatedWorkflow();
 	}
 	
-	//@Test
+	@Test
+	public void verifyOnRecordCloseEvent() {
+		logger = extent.createTest("Verify Create contact activity with On Record Close event ");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.recordCloseEvent(prop.getProperty("CreateWorkspaceString"), 
+										prop.getProperty("OnRecordCloseEvent"), 
+										prop.getProperty("DynamicUIString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
+				"User is able to execute the On Record Close Event ", 
+				"Unable to execcute the On Record Close Event ");
+		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
+	public void verifyOnDataLoadedEvent() {
+		logger = extent.createTest("Verify Create contact activity with On Data Loaded event ");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.ondataLoadedEvent(prop.getProperty("CreateWorkspaceString"), 
+										prop.getProperty("OnDataLoadedEvent"), 
+										prop.getProperty("DynamicUIString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
+				"User is able to execute the On Data Loaded Event ", 
+				"Unable to execcute the On Data Loaded Event ");
+		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
+	public void verifyOnEditorLoadedEvent() {
+		logger = extent.createTest("Verify Create contact activity with On Data Loaded event ");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.onEditorLoadedEvent(prop.getProperty("CreateWorkspaceString"), 
+										prop.getProperty("OnEditorLoadedEvent"), 
+										prop.getProperty("DynamicUIString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
+				"User is able to execute the On Editor Loaded Event ", 
+				"Unable to execcute the On Data Editor Event ");
+		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
 	public void verifyEditActivity() {
 		logger = extent.createTest("Verify user is able to rename the create workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -97,7 +136,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		PFHomePage.deleteCreatedWorkflow();
 	}
 	
-	//@Test
+	@Test
 	public void verifyDeleteActivity() {
 		logger = extent.createTest("Verify user is able to delete the create workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -108,7 +147,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		PFHomePage.deleteCreatedWorkflow();
 	}
 	
-	//@Test
+	@Test
 	public void verifyPinActivity() {
 		logger = extent.createTest("Verify user is able to pin the create workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -119,7 +158,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		PFHomePage.deleteCreatedWorkflow();
 	}
 	
-	//@Test
+	@Test
 	public void verifyCopyActivity() {
 		logger = extent.createTest("Verify user is able to copy the create workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();

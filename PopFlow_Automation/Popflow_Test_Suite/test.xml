@@ -6,7 +6,7 @@
 		<class
 				name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
 				<methods>
-				<include name = "verifyAddingCreateWorkspaceActivity">
+				<include name = "verifyCopyActivity">
 				</include>
 				</methods>
 			

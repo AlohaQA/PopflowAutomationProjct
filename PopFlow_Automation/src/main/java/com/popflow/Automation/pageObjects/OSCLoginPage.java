@@ -31,14 +31,23 @@ public class OSCLoginPage extends TestBase{
 	@FindBy(how = How.XPATH, using = "//*[@id='loginbutton']")
 	private WebElement oscLoginPageLoginBtn;
 	
-	@FindBy(xpath = "//*[@id=\"logo\"]")
+	@FindBy(xpath = "//span[@class='oj-button-icon oj-start icon-browserExtension fa fa fa-shield']")
 	WebElement oscShieldButton;
+	
+	@FindBy(xpath = "//span[@class='oj-button-icon oj-start icon-browserExtension oj-button-icon oj-start fa fa fa-shield']")
+	WebElement oscShieldButtonWhenClosed;
+	
+	@FindBy(xpath = "//h2[contains(text(),'Media Bar')]")
+	WebElement MediaBarLabel;
 	
 	@FindBy(xpath = "/html/body/app-root/login/login-form/form/div/div/div[1]/label")
 	WebElement EnvironmentNameLabel;
 	
 	@FindBy(xpath = "/html/body/app-root/div/button/i")
 	WebElement SettingButton;
+	
+	@FindBy(xpath = "//select[@id='chatMediaBar_statusBtn']")
+	WebElement StatusButton;
 	
 	private String mediaBarIFrameName = "sidePaneBrowserExtension";
 	
@@ -83,10 +92,27 @@ public class OSCLoginPage extends TestBase{
 		enterCRMPassword(prop.getProperty("crmPwd"));
 		commonActions.click(oscLoginPageLoginBtn);
 		waitTillLoadPage();
-		//this.switchToMediaBarIFrame();
-		//commonActions.waitUntilElementIsVisible(driver, 60, EnvironmentNameLabel);
-		commonActions.waitFor(10000);
-	}
+		commonActions.waitUntilElementIsVisible(driver, 60, StatusButton);
+		log.info("OSC Chat Status button displayed ");
+		logger.info("OSC Chat Status button displayed ");
+		if(commonActions.isElementPresent(MediaBarLabel)) {
+			log.info("Side Panel of Media Bar is already opened ");
+			logger.info("Side Panel of Media Bar is already opened ");
+			commonActions.waitFor(10000);
+		}
+		else {
+			commonActions.waitUntilElementIsVisible(driver, 60, oscShieldButtonWhenClosed);
+			commonActions.click(oscShieldButtonWhenClosed);
+			if(commonActions.isElementPresent(MediaBarLabel)) {
+				log.info("Side Panel of Media Bar is opened by clicking on shield button ");
+				logger.info("Side Panel of Media Bar is opened by clicking on shield button ");
+				commonActions.waitFor(10000);
+			}else {
+				log.info("Unable to open side panel for media bar ");
+				logger.info("Unable to open side panel for media bar ");
+			}
+		}
+	} 
 	
 	public void switchToMediaBarIFrame() {
 		browserHelper.switchToFrame(mediaBarIFrameName);
@@ -95,9 +121,10 @@ public class OSCLoginPage extends TestBase{
 	}
 
 	public boolean waitTillLoadPage() {
-		if(commonActions.waitUntilElementIsVisible(driver, 60, oscShieldButton) != null)
+		if(commonActions.waitUntilElementIsVisible(driver, 60, StatusButton) != null)
 		return true;
 		else
 			return false;		
 	}
+	
 }

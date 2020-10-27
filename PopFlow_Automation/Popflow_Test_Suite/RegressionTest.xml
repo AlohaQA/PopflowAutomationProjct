@@ -55,8 +55,21 @@
 					</include>
 					<include name = "verifyCopyActivity">
 					</include>
+					<include name = "verifyCreateContactActivity">
+					</include>
+					<include name = "verifyCreateIncidentActivity">
+					</include>
+					<include name = "verifyOnRecordSaveEvent">
+					</include>
+					<include name = "verifyOnRecordCloseEvent">
+					</include>
+					<include name = "verifyOnDataLoadedEvent">
+					</include>
+					<include name = "verifyOnEditorLoadedEvent">
+					</include>
 				</methods>
 			</class>
+			
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
