@@ -4,13 +4,20 @@
 <test name="Verify Cloud Popflow Test Cases">
 		<classes>
 		<class
-				name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
-				<methods>
-				<include name = "verifyCopyActivity">
+				name="com.popflow.Automation.testcases.DynamicUIActivityTest">
+				<methods>	
+				<include name = "verifyAddingDynamicUIActivity">
 				</include>
+				<include name = "verifyEditActivity">
+				</include>
+				<include name = "verifyDeleteActivity">
+				</include>
+				<include name = "verifyPinActivity">
+				</include>
+				<include name = "verifyCopyActivity">
+				</include>									
 				</methods>
-			
-		</class>
+			</class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

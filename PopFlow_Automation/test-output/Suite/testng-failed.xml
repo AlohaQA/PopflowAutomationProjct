@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Verify Cloud Popflow Test Cases(failed)">
     <classes>
-      <class name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
+      <class name="com.popflow.Automation.testcases.DynamicUIActivityTest">
         <methods>
           <include name="setuSuite"/>
           <include name="verifyCopyActivity"/>
@@ -12,7 +12,7 @@
           <include name="afterSuite"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.popflow.Automation.testcases.CreateWorkspaceActivityTest -->
+      </class> <!-- com.popflow.Automation.testcases.DynamicUIActivityTest -->
     </classes>
   </test> <!-- Verify Cloud Popflow Test Cases(failed) -->
 </suite> <!-- Failed suite [Suite] -->

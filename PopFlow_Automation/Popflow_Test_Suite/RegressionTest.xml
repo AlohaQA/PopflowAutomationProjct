@@ -59,6 +59,12 @@
 					</include>
 					<include name = "verifyCreateIncidentActivity">
 					</include>
+					<include name = "verifyCreateTaskActivity">
+					</include>
+					<include name = "verifyCreateOrganizationActivity">
+					</include>
+					<include name = "verifyOnOpenEvent">
+					</include>
 					<include name = "verifyOnRecordSaveEvent">
 					</include>
 					<include name = "verifyOnRecordCloseEvent">
@@ -67,6 +73,62 @@
 					</include>
 					<include name = "verifyOnEditorLoadedEvent">
 					</include>
+					<include name = "verifyPublishWorkflow">
+					</include>
+					<include name = "verifyUnPublishWorkflow">
+					</include>				
+					<include name = "verifyRePublishWorkflow">
+					</include>
+				</methods>
+			</class>
+			
+			<class
+				name="com.popflow.Automation.testcases.OpenWorkspaceActivityTest">
+				<methods>
+				<include name = "verifyAddingOpenWorkspaceActivity">
+				</include>	
+				<include name = "verifyEditActivity">
+				</include>	
+				<include name = "verifyDeleteActivity">
+				</include>	
+				<include name = "verifyPinActivity">
+				</include>	
+				<include name = "verifyCopyActivity">
+				</include>	
+				<include name = "verifyOpenContactActivity">
+				</include>	
+				<include name = "verifyOpenIncidentActivity">
+				</include>	
+				<include name = "verifyOpenTaskActivity">
+				</include>	
+				<include name = "verifyOpenOrganizationActivity">
+				</include>	
+				<include name = "verifyOnOpenEvent">
+				</include>	
+				<include name = "verifyOnRecordSaveEvent">
+				</include>	
+				<include name = "verifyOnRecordCloseEvent">
+				</include>	
+				<include name = "verifyOnDataLoadedEvent">
+				</include>	
+				<include name = "verifyOnEditorLoadedEvent">
+				</include>					
+				</methods>
+			</class>
+			
+			<class
+				name="com.popflow.Automation.testcases.DynamicUIActivityTest">
+				<methods>	
+				<include name = "verifyAddingDynamicUIActivity">
+				</include>
+				<include name = "verifyEditActivity">
+				</include>
+				<include name = "verifyDeleteActivity">
+				</include>
+				<include name = "verifyPinActivity">
+				</include>
+				<include name = "verifyCopyActivity">
+				</include>									
 				</methods>
 			</class>
 			

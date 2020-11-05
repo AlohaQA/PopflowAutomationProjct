@@ -3,6 +3,7 @@ package com.popflow.Automation.pageObjects;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.apache.poi.util.SuppressForbidden;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	private BrowserHelper browserHelper;
 	private ExtentTest logger;
 	private PopflowHomePage PFHomePage;
+	private CommonCases CommonCases;
 	private OSCLoginPage OSCLogin;
 	private DynamicUIActivityPage DynamicUI;
 	private RandomTextGeneretorUtility Random;
@@ -56,6 +58,9 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper[2]/ul/li/div/div/div")
 	WebElement OnEventButton;
+	
+	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper/ul/li/div/div/div")
+	WebElement OnOpenEventButton;
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/activities-sidebar/div[2]/div[1]/div/img")
 	WebElement CloseButtonFromActivityList;
@@ -96,6 +101,12 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[2]/ul/li[2]")
 	WebElement IncidentEntity;
 	
+	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[2]/ul/li[4]")
+	WebElement TaskEntity;
+	
+	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[1]/div/div/sc-ws-entity-autocomplete/div/div[2]/ul/li[3]")
+	WebElement OrgEntity;
+	
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/activitie-designer/div[2]/div/div/div/div/create-workspace-v1/div/div/div[2]/form/div[2]/div/div[1]/button/i")
 	WebElement AddEntityFieldButton;
 	
@@ -113,6 +124,12 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	
 	@FindBy(xpath = "//div[@class='oj-inputtext oj-form-control oj-component oj-required']")
 	WebElement IncidentSubject;
+	
+	@FindBy(xpath = "//span[@class='tab-text']")
+	WebElement TaskLabel;
+	
+	@FindBy(xpath = "//span[@class='tab-text']")
+	WebElement OrgLabel;
 	
 	@FindBy(xpath = "//input[@automationid='bannerFlagAutomationId']")
 	WebElement BannerText;
@@ -177,6 +194,9 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper[2]/ul/li/div/div[2]/flow-chart/div[1]/div/div/div/div/span/div")
 	WebElement OnEventActivity;
 	
+	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[1]/div/div/div")
+	WebElement OnOpenEventActivity;
+	
 	@FindBy(xpath = "//span[@id='ExtensibilityModalWindowViewModeldialog-title']")
 	WebElement DynamicUITitle;
 	
@@ -192,6 +212,33 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	@FindBy(xpath = "//button[@title='Close']")
 	WebElement CloseButtonOnDynamicUIPopup;
 	
+	@FindBy(xpath = "//*[contains(text(), 'Publish')]")
+	WebElement publishButton;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Un-Publish')]")
+	WebElement UnPublishButton;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Re-Publish')]")
+	WebElement RepublishButton;
+	
+	@FindBy(xpath = "//button[@class='btn btn-warning ng-star-inserted']")
+	WebElement RepublishButtonOnPopup;
+	
+	@FindBy(xpath = "//button[@class='btn btn-danger ng-star-inserted']")
+	WebElement UnPublishButtonOnPopup;
+	
+	@FindBy(xpath = "//input[@class='ng2-tag-input__text-input ng-untouched ng-pristine ng-valid']")
+	WebElement EnterProfileTextBox;
+	
+	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/publish-confirm/div/div/div/div[2]/div[1]/tag-input/tag-input-dropdown/ng2-dropdown/div/ng2-dropdown-menu/div[1]/div/ng2-menu-item[2]/div")
+	WebElement QAProfileFromDropDown;
+	
+	@FindBy(xpath = "//button[@class='btn btn-success ng-star-inserted']")
+	WebElement PublishButtonFromPopUp;
+	
+	@FindBy(xpath = "//*[contains(text(), 'Published')]")
+	WebElement PublishStatus;
+	
 	public CreateWorkspaceActivityPage(WebDriver driver, ExtentTest logger) {
 		this.driver = driver;
 		this.logger = logger;
@@ -199,6 +246,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	OSCLogin = new OSCLoginPage(driver, logger);
 	DynamicUI = new DynamicUIActivityPage(driver, logger); 
 	Random = new RandomTextGeneretorUtility();
+	CommonCases = new CommonCases(driver, logger);
 	PageFactory.initElements(driver, this);
 	}
 	
@@ -320,10 +368,48 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(EntitiyTextBox);
 		log.info("Clicked on the entitiy textbox " + EntitiyTextBox);
 		logger.info("Clicked on the entitiy textbox " + EntitiyTextBox);
-		commonActions.waitUntilElementIsVisible(driver, 60, ContactEntitiy);
+		commonActions.waitUntilElementIsVisible(driver, 60, IncidentEntity);
 		commonActions.click(IncidentEntity);
-		log.info("Incident entity is selected form the drop down " + EntitiyTextBox);
-		logger.info("Incident entity is selected form the drop down" + EntitiyTextBox);
+		log.info("Incident entity is selected form the drop down " + IncidentEntity);
+		logger.info("Incident entity is selected form the drop down" + IncidentEntity);
+		commonActions.waitFor(1000);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+	}
+	
+	public void selectTasktWorkspace(String CreateWorkspaceString) {
+		AddCreateWorkspaceActitiy(CreateWorkspaceString);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		log.info("Clicked on the added create worksace activity " + AddedCreateWorkspaceActivity);
+		logger.info("Clicked on the added create worksace activity " + AddedCreateWorkspaceActivity);
+		commonActions.waitUntilElementIsVisible(driver, 60, EntitiyTextBox);
+		commonActions.click(EntitiyTextBox);
+		log.info("Clicked on the entitiy textbox " + EntitiyTextBox);
+		logger.info("Clicked on the entitiy textbox " + EntitiyTextBox);
+		commonActions.waitUntilElementIsVisible(driver, 60, TaskEntity);
+		commonActions.click(TaskEntity);
+		log.info("Task entity is selected form the drop down " + TaskEntity);
+		logger.info("Task entity is selected form the drop down" + TaskEntity);
+		commonActions.waitFor(1000);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+	}
+	
+	public void selectOrganizationWorkspace(String CreateWorkspaceString) {
+		AddCreateWorkspaceActitiy(CreateWorkspaceString);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		log.info("Clicked on the added create worksace activity " + AddedCreateWorkspaceActivity);
+		logger.info("Clicked on the added create worksace activity " + AddedCreateWorkspaceActivity);
+		commonActions.waitUntilElementIsVisible(driver, 60, EntitiyTextBox);
+		commonActions.click(EntitiyTextBox);
+		log.info("Clicked on the entitiy textbox " + EntitiyTextBox);
+		logger.info("Clicked on the entitiy textbox " + EntitiyTextBox);
+		commonActions.waitUntilElementIsVisible(driver, 60, OrgEntity);
+		commonActions.click(OrgEntity);
+		log.info("Organization entity is selected form the drop down " + OrgEntity);
+		logger.info("Organization entity is selected form the drop down" + OrgEntity);
 		commonActions.waitFor(1000);
 		commonActions.click(CreateWorkspaceDesignerCloseButton);
 		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
@@ -437,97 +523,87 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	}
 	
 	public void runTest() {
-		commonActions.waitUntilElementIsVisible(driver, 60, runPopflowButton);
-		commonActions.click(runPopflowButton);
-		commonActions.waitFor(1000);
-		commonActions.click(sendTestButton);
-		commonActions.waitFor(2000);
+		CommonCases.runTest();
 	}
 	
 	public void renameActivity(String CreateWorkspaceString) {
 		selectContactWorkspace(CreateWorkspaceString);
-		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
-		if(commonActions.isElementPresent(CreateWorkspaceActivityEditButton))
-		{
-		commonActions.click(CreateWorkspaceActivityEditButton);
-		commonActions.waitFor(2000);
-		commonActions.enterData(RenameWorkflowTextbox, CreateWorkspaceString);
-		commonActions.waitUntilElementIsVisible(driver, 60, SettingsButton);
-		commonActions.click(SettingsButton);
-		log.info("Clicked on the settings button on the activity panel " + SettingsButton);
-		logger.info("Clicked on the settins button on the activity panel " + SettingsButton);
-		commonActions.waitUntilElementIsVisible(driver, 60, SettingsButton);
-	}else {
-		log.info("Unable to see the edit button on the create workspace activity ");
-		logger.info("Unable to see the edit button on the create workspace activity ");}
+		CommonCases.renameActivity(CreateWorkspaceString);
 	}	
 	
 	public void pinActivity(String CreateWorkspaceString) {
 		selectContactWorkspace(CreateWorkspaceString);
-		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
-		commonActions.click(SettingsButton);
-		log.info("Clicked on the settings button from the activity panel " + SettingsButton);
-		logger.info("Clicked on the settings button from the activity panel " + SettingsButton);
-		commonActions.waitUntilElementIsVisible(driver, 60, PinOption);
-		if(commonActions.isElementPresent(PinOption)) 
-		{	
-		commonActions.click(PinOption);
-		log.info("Clicked on the pin button from the settings drop down" + PinOption);
-		logger.info("Clicked on the pin button from the settings drop down" + PinOption);
-		commonActions.waitUntilElementIsVisible(driver, 60, ClosePinnedActivityButton);
-		commonActions.click(ClosePinnedActivityButton);
-		log.info("Clicked on the close pin activity button" + PinOption);
-		logger.info("Clicked on the close in activity button" + PinOption);
-		commonActions.waitFor(2000);
-	}else {
-		log.info("Unable to see the pin option under the settings drop down ");
-		logger.info("Unable to see the pin option under the settings drop down ");}
+		CommonCases.pinActivity(CreateWorkspaceString);
 		}
 	
 	public void deleteActivity(String CreateWorkspaceString) {
 		selectContactWorkspace(CreateWorkspaceString);
-		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
-		commonActions.click(SettingsButton);
-		log.info("Clicked on the settings button from the activity panel " + SettingsButton);
-		logger.info("Clicked on the settings button from the activity panel " + SettingsButton);	
-		commonActions.waitUntilElementIsVisible(driver, 60, DeleteOption);
-	if(commonActions.isElementPresent(DeleteOption)) 
-	{
-		commonActions.click(DeleteOption);
-		log.info("Clicked on the Delete button from the settings drop down " + DeleteOption);
-		logger.info("Clicked on the Delete button from the settings drop down " + DeleteOption);
-		commonActions.waitUntilElementIsVisible(driver, 60, DeleteButtonOnPopup);
-		commonActions.click(DeleteButtonOnPopup);
-		log.info("Clicked on the Delete button from Popup " + DeleteButtonOnPopup);
-		logger.info("Clicked on the Delete button from Popup " + DeleteButtonOnPopup);
-		commonActions.waitUntilElementIsVisible(driver, 60, InitialActivityButton);
-	}else {
-		log.info("Unable to see the delete option under the settings drop down ");
-		logger.info("Unable to see the delete option under the settings drop down");}
+		CommonCases.deleteActivity(CreateWorkspaceString);
 	}
 	
 	public void copyPasteActivity(String CreateWorkspaceString) {
 		selectContactWorkspace(CreateWorkspaceString);
+		CommonCases.copyPasteActivity(CreateWorkspaceString);
+	}
+	
+	public void onOpenEvent(String CreateWorkspaceString, String DynamicUIString) {
+		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
+		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
+		log.info("User is logged in to the OSC ");
+		logger.info("User is logged in to the OSC ");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+		
+		selectContactWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
 		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
-		commonActions.click(SettingsButton);
-		log.info("Clicked on the settings button from the activity panel " + SettingsButton);
-		logger.info("Clicked on the settings button from the activity panel " + SettingsButton);
-		commonActions.waitUntilElementIsVisible(driver, 60, CopyOption);
-	if(commonActions.isElementPresent(CopyOption))	
-	{	
-		commonActions.click(CopyOption);
-		log.info("Clicked on the Copy button from the settings drop down " + CopyOption);
-		logger.info("Clicked on the Copy button from the settings drop down " + CopyOption);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		addContactEntity();
+		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
 		commonActions.waitUntilElementIsVisible(driver, 60, OnOpenEvent);
-		commonActions.RightClick(OnOpenEvent);
-		commonActions.waitUntilElementIsVisible(driver, 60, Pasteoption);
-		commonActions.click(Pasteoption);
-		log.info("Clicked on the Paste button " + Pasteoption);
-		logger.info("Clicked on the Paste button " + Pasteoption);
-		commonActions.waitFor(2000);
+		commonActions.click(OnOpenEvent);
+		log.info("Clicked on the On Open button from designer " + OnOpenEvent);
+		logger.info("Clicked on the On Open button from designer " + OnOpenEvent);
+		
+		DynamicUI.SelectDynamicUIActivity(DynamicUIString);
+		commonActions.waitUntilElementIsVisible(driver, 60, OnOpenEventActivity);
+		commonActions.click(OnOpenEventActivity);
+		log.info("Clicked on the activity added on the On Open event " + OnOpenEventActivity);
+		logger.info("Clicked on the activity added on the On Open event " + OnOpenEventActivity);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		
+		runTest();
+		OSCLogin.switchToOSCWindow();
+		
+	if(commonActions.isElementPresent(CloseButtonOnDynamicUIPopup)) {
+		
+		commonActions.waitUntilElementIsVisible(driver, 60, CloseButtonOnDynamicUIPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, DynamicUITitle);
+		String text1 = commonActions.getText(DynamicUITitle);
+		log.info("Text on the dynamic UI activity title is :" + text1);
+		logger.info("Text on the dynamic UI activity title is :" + text1);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(CloseButtonOnDynamicUIPopup)&&text1.equalsIgnoreCase("DynamicUI Test"), 
+				"On Open  Event is working" , 
+				"On Open Event is not working"); 
+		commonActions.click(CloseButtonOnDynamicUIPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, OSCFirstName);
+		String text = commonActions.getText(OSCFirstName);
+		log.info("Text on the created contact is :" + text);
+		logger.info("Text on the created contact is :" + text);
+		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
+				" Contact is created using create workspace activity", 
+				" Unable to create contact using create workspace activity");
+		
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae(); 
 	}else {
-		log.info("Unable to see the copy option under the settings drop down ");
-		logger.info("Unable to see the copy option under the settings drop down");}
+		commonActions.fail("Unable to execute On Open Event");
+		log.info("Unable to execute On Open Event");
+		logger.fail("Unable to execute On Open Event");
+		}
 	}
 	
 	public void recordSaveEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
@@ -800,6 +876,108 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		}
 	}
 	
+	public void publishWorkflow(String CreateWorkspaceString) {
+		selectContactWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		commonActions.click(AddedCreateWorkspaceActivity);
+		addContactEntity();
+		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
+		commonActions.click(CreateWorkspaceDesignerCloseButton);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		commonActions.waitUntilElementIsVisible(driver, 6, publishButton);
+		commonActions.click(publishButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, EnterProfileTextBox);
+		commonActions.click(EnterProfileTextBox);
+		commonActions.enterData(EnterProfileTextBox, "qa");
+		commonActions.waitUntilElementIsVisible(driver, 60, QAProfileFromDropDown);
+		commonActions.click(QAProfileFromDropDown);
+		commonActions.waitUntilElementIsVisible(driver, 60, PublishButtonFromPopUp);
+		commonActions.click(PublishButtonFromPopUp);
+		commonActions.waitUntilElementIsVisible(driver, 60, UnPublishButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(UnPublishButton), 
+				"User is able to Publish the worklow", 
+				"User is not able to publish the workflow");
+	}
+	
+	public void unpublishWorkflow(String CreateWorkspaceString) {
+		publishWorkflow(CreateWorkspaceString);
+		commonActions.click(UnPublishButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, UnPublishButtonOnPopup);
+		commonActions.click(UnPublishButtonOnPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, RepublishButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(RepublishButton), 
+				"User is able to Un-publish the worklow", 
+				"User is not able to Un-publish the workflow");
+		
+	}
+	
+	public void republishWorkflow(String CreateWorkspaceString) {
+		unpublishWorkflow(CreateWorkspaceString);
+		commonActions.click(RepublishButton);
+		commonActions.waitUntilElementIsVisible(driver, 60, RepublishButtonOnPopup);
+		commonActions.click(RepublishButtonOnPopup);
+		commonActions.waitUntilElementIsVisible(driver, 60, publishButton);
+		commonActions.verifyAssertTrue(commonActions.isElementPresent(publishButton), 
+				"User is able to Re-publish the worklow", 
+				"User is not able to Re-publish the workflow");
+		
+	}
+	
+	public void verifyCreateTask(String CreateWorkspaceString) {
+		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
+		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
+		log.info("User is logged in to the OSC ");
+		logger.info("User is logged in to the OSC ");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+
+		selectTasktWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		
+		runTest();
+		OSCLogin.switchToOSCWindow();
+		commonActions.waitUntilElementIsVisible(driver, 60, TaskLabel);
+		String text = commonActions.getText(TaskLabel);
+		log.info("Text is :" + text);
+		commonActions.verifyAssertTrue(text.equalsIgnoreCase("New Task"), 
+				" Task is created using create workspace activity", 
+				" Task to create contact using create workspace activity");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+	} 
+	
+	public void verifyCreateOrganisation(String CreateWorkspaceString) {
+		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
+		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
+		log.info("User is logged in to the OSC ");
+		logger.info("User is logged in to the OSC ");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+
+		selectOrganizationWorkspace(CreateWorkspaceString);
+		commonActions.waitFor(1000);
+		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
+		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
+		
+		runTest();
+		OSCLogin.switchToOSCWindow();
+		commonActions.waitUntilElementIsVisible(driver, 60, OrgLabel);
+		String text = commonActions.getText(OrgLabel);
+		log.info("Text is :" + text);
+		commonActions.verifyAssertTrue(text.equalsIgnoreCase("New Organization"), 
+				" Organization is created using create workspace activity", 
+				" Unable to create Organization using create workspace activity");
+		OSCLogin.switchBackToPopflowWindow();
+		switchToPopflowIFrmae();
+	}
+	
 	public void selectEvent(String EventName) {
 		
 		Select EventDropDown = new Select(SelectEventButton);
@@ -807,10 +985,6 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		log.info("Selected event from drop down is : " + EventName);
 		logger.info("Selected event from drop down is :" + EventName);
 		commonActions.waitFor(2000);
-	}
-	
-	public void AddOnRecordSaveActivity() {
-		
 	}
 	
 	public boolean CreateWorkspaceFlag() {
@@ -837,6 +1011,27 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		
 	}
 	
+	public boolean PublishWorkflowFlag() {
+		commonActions.waitUntilElementIsVisible(driver, 60, UnPublishButton);
+		if(commonActions.isElementPresent(UnPublishButton)) {
+			log.info("Unpublish button is displayed " + UnPublishButton);
+			logger.info("Unpublish button is displayed " + UnPublishButton);
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean UnPublishWorkflowFlag() {
+		commonActions.waitUntilElementIsVisible(driver, 60, RepublishButton);
+		if(commonActions.isElementPresent(RepublishButton)) {
+			log.info("Republish button is displayed " + UnPublishButton);
+			logger.info("Republish button is displayed " + UnPublishButton);
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 	
 }

@@ -10,6 +10,7 @@ import javax.sound.midi.MidiDevice.Info;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,6 +33,7 @@ public class PopflowHomePage extends TestBase{
 	private CommonActions commonActions;
 	private BrowserHelper browserHelper;
 	private ExtentTest logger;
+	
 	
 	Logger log = LoggerHelper.getLogger(PopflowHomePage.class);
 	
@@ -77,7 +79,7 @@ public class PopflowHomePage extends TestBase{
 	@FindBy(xpath = "/html/body/app-root/div[2]/instance/div/instance-workflow/duplicate-workflow/div/div/div/div[3]/button[2]")
 	WebElement DuplicateWorkFlowButton;
 	
-	@FindBy(xpath = "//i[@class='material-icons clickable'][contains(text(),'add')]")
+	@FindBy(xpath = "//i[@title='Add New']")
 	WebElement AddNewWorkflowButton;
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[2]/input")
@@ -85,7 +87,7 @@ public class PopflowHomePage extends TestBase{
 	
 	@FindBy(xpath = "/html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[3]/button[2]")
 	WebElement AddNewWorkFlowSaveButton;
-	
+		
 	@FindBy(xpath = "/html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i")
 	WebElement DeleteWorkFlowButton;
 	
@@ -190,6 +192,9 @@ public class PopflowHomePage extends TestBase{
 	
 	@FindBy(xpath = "//button[contains(text(),'Import new')]")
 	WebElement ImortNewButtonOnPopup;
+	
+	@FindBy(xpath = "//i[@class='material-icons clickable ng-star-inserted'][contains(text(),'add')]")
+	WebElement AddNewWorkflowButtonAfterPulishDelete;
 	
 	
 	public PopflowHomePage(WebDriver driver, ExtentTest logger) {
@@ -301,6 +306,40 @@ public class PopflowHomePage extends TestBase{
 		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
 		 commonActions.waitFor(3000);
 		 return new CreateWorkspaceActivityPage(driver, logger);
+	}
+	
+	public OpenWorkspaceActivityPage addNewWorkFlowForOpenWorkspace(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new OpenWorkspaceActivityPage(driver, logger);
+	}
+	
+	public DynamicUIActivityPage addNewWorkFlowForDynamicUI(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new DynamicUIActivityPage(driver, logger);
 	}
 	
 	public void editWorkflow() {
@@ -756,6 +795,24 @@ public class PopflowHomePage extends TestBase{
 		logger.info("Expand-collapse on app manager is not present: " + LinkeAccountButton.toString());
 		return false;
 		}
+	}
+	
+	public void navigateToPopflowHomepage() {
+		commonActions.waitUntilElementIsVisible(driver, 60, PopflowHomePageButton);
+		if(commonActions.isElementPresent(PopflowHomePageButton)) {
+			log.info("Instance button is present on the popflow studio ");
+			logger.info("Instance button is present on the popflow studio ");
+			commonActions.click(PopflowHomePageButton);
+			log.info("Clicked on the Instance button " + PopflowHomePageButton);
+			logger.info("Clicked on the Instance button " + PopflowHomePageButton);
+			commonActions.waitUntilElementIsVisible(driver, 60, FirstWorkFlow);
+			commonActions.waitFor(2000);
+			commonActions.click(FirstWorkFlow);
+		}else {
+			log.info("Instance button is not present on the popflow studio " + InstanceButton);
+			logger.info("Instance button is not present on the popflow studio " + InstanceButton);
+		}
+		
 	}
 	
 	public boolean CRMLoginFlag() {

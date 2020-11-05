@@ -74,6 +74,34 @@ public class CreateWorkspaceActivityTest extends TestBase{
 	}
 	
 	@Test
+	public void verifyCreateTaskActivity() {
+		logger = extent.createTest("Verify that user is able to create Task using create workspace activity ");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.verifyCreateTask(prop.getProperty("CreateWorkspaceString"));
+		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
+	public void verifyCreateOrganizationActivity() {
+		logger = extent.createTest("Verify that user is able to create Organization using create workspace activity ");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.verifyCreateOrganisation(prop.getProperty("CreateWorkspaceString"));
+		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
+	public void verifyOnOpenEvent() {
+		logger = extent.createTest("Verify user is able to execute activiy on the On Open event ");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.onOpenEvent(prop.getProperty("CreateWorkspaceString"), 
+									prop.getProperty("DynamicUIString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
+				"User is able to execute the activity on the On Open Event ", 
+				"Unable to execute the activity on the On Open Event ");
+		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
 	public void verifyOnRecordSaveEvent() {
 		logger = extent.createTest("Verify Create contact activity with On Record Save event ");
 		this.AppManagerLoginAndCreateaWorkflow();
@@ -167,6 +195,42 @@ public class CreateWorkspaceActivityTest extends TestBase{
 				"User is able to copy the Create Workspace activity", 
 				"User is not able to copy the Create Workspace activity");
 		PFHomePage.deleteCreatedWorkflow();
+	}
+	
+	@Test
+	public void verifyPublishWorkflow() {
+		logger = extent.createTest("Verify user is able to publish the workflow");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.publishWorkflow(prop.getProperty("CreateWorkspaceString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.PublishWorkflowFlag(), 
+				"User is able to publish the workflow ", 
+				"User is not able to publish the workflow ");
+		PFHomePage.deleteCreatedWorkflow();
+		
+	}
+	
+	@Test
+	public void verifyUnPublishWorkflow() {
+		logger = extent.createTest("Verify user is able to Unpublish the workflow");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.unpublishWorkflow(prop.getProperty("CreateWorkspaceString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.UnPublishWorkflowFlag(), 
+				"User is able to Un-publish the workflow ", 
+				"User is not able to Un-publish the workflow ");
+		PFHomePage.deleteCreatedWorkflow();
+		
+	}
+	
+	@Test
+	public void verifyRePublishWorkflow() {
+		logger = extent.createTest("Verify user is able to re-publish the workflow");
+		this.AppManagerLoginAndCreateaWorkflow();
+		CreateWorkspace.republishWorkflow(prop.getProperty("CreateWorkspaceString"));
+		commonActions.verifyAssertTrue(CreateWorkspace.PublishWorkflowFlag(), 
+				"User is able to Re-publish the workflow ", 
+				"User is not able to Re-publish the workflow ");
+		PFHomePage.deleteCreatedWorkflow();
+		
 	}
 	
 	
