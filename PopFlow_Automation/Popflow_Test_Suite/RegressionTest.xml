@@ -37,8 +37,7 @@
 					<include name = "verifyImportWorkflowFunctionalityWithOptionNew">
 					</include>
 					<include name = "verifyCRMInsatnceNavigation">
-					</include>
-					
+					</include>			
 				</methods>
 			</class>
 			
@@ -58,10 +57,6 @@
 					<include name = "verifyCreateContactActivity">
 					</include>
 					<include name = "verifyCreateIncidentActivity">
-					</include>
-					<include name = "verifyCreateTaskActivity">
-					</include>
-					<include name = "verifyCreateOrganizationActivity">
 					</include>
 					<include name = "verifyOnOpenEvent">
 					</include>
@@ -88,30 +83,22 @@
 				<include name = "verifyAddingOpenWorkspaceActivity">
 				</include>	
 				<include name = "verifyEditActivity">
-				</include>	
+				</include>
 				<include name = "verifyDeleteActivity">
-				</include>	
+				</include>
 				<include name = "verifyPinActivity">
-				</include>	
+				</include>
 				<include name = "verifyCopyActivity">
-				</include>	
+				</include>
 				<include name = "verifyOpenContactActivity">
 				</include>	
 				<include name = "verifyOpenIncidentActivity">
-				</include>	
-				<include name = "verifyOpenTaskActivity">
-				</include>	
-				<include name = "verifyOpenOrganizationActivity">
-				</include>	
+				</include>		
 				<include name = "verifyOnOpenEvent">
 				</include>	
 				<include name = "verifyOnRecordSaveEvent">
 				</include>	
 				<include name = "verifyOnRecordCloseEvent">
-				</include>	
-				<include name = "verifyOnDataLoadedEvent">
-				</include>	
-				<include name = "verifyOnEditorLoadedEvent">
 				</include>					
 				</methods>
 			</class>
@@ -132,6 +119,21 @@
 				</methods>
 			</class>
 			
+			<class
+				name="com.popflow.Automation.testcases.IfActivityTest">
+				<methods>
+				<include name = "verifyAddingIfActivity">
+				</include>
+				<include name = "verifyEditActivity">
+				</include>
+				<include name = "verifyDeleteActivity">
+				</include>
+				<include name = "verifyPinActivity">
+				</include>	
+				<include name = "verifyCopyActivity">
+				</include>								
+				</methods>
+			</class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -98,7 +98,7 @@ public class OSCLoginPage extends TestBase{
 		if(commonActions.isElementPresent(MediaBarLabel)) {
 			log.info("Side Panel of Media Bar is already opened ");
 			logger.info("Side Panel of Media Bar is already opened ");
-			commonActions.waitFor(10000);
+			commonActions.waitFor(15000);
 		}
 		else {
 			commonActions.waitUntilElementIsVisible(driver, 60, oscShieldButtonWhenClosed);
@@ -106,7 +106,7 @@ public class OSCLoginPage extends TestBase{
 			if(commonActions.isElementPresent(MediaBarLabel)) {
 				log.info("Side Panel of Media Bar is opened by clicking on shield button ");
 				logger.info("Side Panel of Media Bar is opened by clicking on shield button ");
-				commonActions.waitFor(10000);
+				commonActions.waitFor(15000);
 			}else {
 				log.info("Unable to open side panel for media bar ");
 				logger.info("Unable to open side panel for media bar ");

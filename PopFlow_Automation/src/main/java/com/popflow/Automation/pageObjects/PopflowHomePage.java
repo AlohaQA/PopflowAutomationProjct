@@ -325,6 +325,23 @@ public class PopflowHomePage extends TestBase{
 		 return new OpenWorkspaceActivityPage(driver, logger);
 	}
 	
+	public  PopSearchAndSelectActivityPage addNewWorkFlowForPSS(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new PopSearchAndSelectActivityPage(driver, logger);
+	}
+	
 	public DynamicUIActivityPage addNewWorkFlowForDynamicUI(String NewWorkFlowName) {
 		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
 		 commonActions.click(AddNewWorkflowButton);
@@ -340,6 +357,23 @@ public class PopflowHomePage extends TestBase{
 		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
 		 commonActions.waitFor(3000);
 		 return new DynamicUIActivityPage(driver, logger);
+	}
+	
+	public IfActivityPage addNewWorkFlowForIfActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new IfActivityPage(driver, logger);
 	}
 	
 	public void editWorkflow() {
@@ -373,18 +407,18 @@ public class PopflowHomePage extends TestBase{
 			log.info("Edit workflow button is present " + EditWorkFlowDescriptionButton);
 			logger.info("Edit workflow button is present " + EditWorkFlowDescriptionButton);
 			commonActions.click(EditWorkFlowDescriptionButton);
-			log.info("Cllicked on the edit workflow button" + EditWorkFlowDescriptionButton.toString());
-			logger.info("Cllicked on the edit workflow button" + EditWorkFlowDescriptionButton.toString());
+			log.info("Clicked on the edit workflow button" + EditWorkFlowDescriptionButton.toString());
+			logger.info("Clicked on the edit workflow button" + EditWorkFlowDescriptionButton.toString());
 			commonActions.waitUntilElementIsVisible(driver, 60, EditWorkflowDescriptionTextBox);
-			commonActions.enterData(EditWorkFlowTextBox, " - verify edit workflow description");
+			commonActions.enterData(EditWorkflowDescriptionTextBox, " - verify edit workflow description");
 			commonActions.waitFor(3000);
 			commonActions.click(SettingButton);
 			log.info("Clicked ont the settings button " + SettingButton.toString());
 			logger.info("Clicked ont the settings button " + SettingButton.toString());
 			commonActions.waitFor(3000);
 		}else {
-			log.info("Edit workflow button is not present " + EditWorkflowNameButton);
-			logger.info("Edit workflow button is not present " + EditWorkflowNameButton);
+			log.info("Edit workflow button is not present " + EditWorkFlowDescriptionButton);
+			logger.info("Edit workflow button is not present " + EditWorkFlowDescriptionButton);
 		}
 		
 	}
@@ -404,8 +438,8 @@ public class PopflowHomePage extends TestBase{
 			
 			commonActions.waitUntilElementIsVisible(driver, 60, WorkflowNameErrorMessage);
 			String ErrorMsg = commonActions.getText(WorkflowNameErrorMessage);
-			log.info("Error message when entered workflow name more than 50 characters : "+ ErrorMsg);
-			logger.info("Error message when entered workflow name more than 50 characters : "+ ErrorMsg);
+			log.info("Error message when entered workflow name more than 45 characters. : "+ ErrorMsg);
+			logger.info("Error message when entered workflow name more than 45 characters. : "+ ErrorMsg);
 
 			commonActions.verifyAssertTrue(ErrorMsg.equalsIgnoreCase(
 					"Workflow name cannot be larger than 45 characters."),
