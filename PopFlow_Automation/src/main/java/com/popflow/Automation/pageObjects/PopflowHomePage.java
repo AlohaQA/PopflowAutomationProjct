@@ -37,7 +37,7 @@ public class PopflowHomePage extends TestBase{
 	
 	Logger log = LoggerHelper.getLogger(PopflowHomePage.class);
 	
-	@FindBy(xpath="/html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button")
+	@FindBy(xpath="//div[@class='card-body']//div[@class='card-text']//a[contains(text(), 'isv-19c-openmethods-3.rightnow')]/../..//div[3]//button[contains(text(), 'Design')]")
 	WebElement DesignButtonInstance;
 	
 	@FindBy(xpath="//a[@class='linked-account clickable']")
@@ -172,13 +172,13 @@ public class PopflowHomePage extends TestBase{
 	@FindBy(xpath = "//i[contains(text(),'info')]")
 	WebElement InfoButton;
 	
-	@FindBy(xpath = "/html/body/app-root/div[1]/div/div/div[2]")
+	@FindBy(xpath = "(//div[@class='modal-body text-center'])[1]")
 	WebElement PopflowVersion;
 	
 	@FindBy(xpath = "//a[contains(text(),'Instances')]")
 	WebElement InstanceButton;
 	
-	@FindBy(xpath = "//a[contains(text(),'isv-19a-openmethods')]")
+	@FindBy(xpath = "//a[contains(text(),'isv-19c-openmethods')]")
 	WebElement PopflowHomePageButton;
 	
 	@FindBy(xpath = "//h6[contains(text(),'Import Workflow Test')]")
@@ -253,9 +253,8 @@ public class PopflowHomePage extends TestBase{
 		String ErrorMssg = commonActions.getText(InvalidOSCCredErrorMessage);
 		log.info("Error message when entered invalid CRM credentials is:"+ ErrorMssg);
 		logger.info("Error message when entered invalid CRM credentials is:"+ ErrorMssg);
-		commonActions.verifyAssertTrue(ErrorMssg.equalsIgnoreCase("	×\n" + 
-				"Error!\n" + 
-				"Unable to authenticate this user. Please check username and Password."), 
+		commonActions.verifyAssertTrue(ErrorMssg.contains(
+				" Unable to authenticate this user. Please check username and Password."), 
 				
 				"Showing correct error message for Invalid OSC credentials", 
 				"Showing incorrect error message for Invalid OSC credentials");
@@ -340,6 +339,125 @@ public class PopflowHomePage extends TestBase{
 		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
 		 commonActions.waitFor(3000);
 		 return new PopSearchAndSelectActivityPage(driver, logger);
+	}
+	
+	public NextWorkflowActivityPage addNewWorkFlowForNetWorkflowActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new NextWorkflowActivityPage(driver, logger);
+	}
+	
+	public GetDataActivityPage addNewWorkFlowForGetDataActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new GetDataActivityPage(driver, logger);
+	}
+	
+	public GetContactActivityPage addNewWorkFlowForGetContactActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new GetContactActivityPage(driver, logger);
+	}
+	
+	public UpdateDataActivityPage addNewWorkFlowForUpdateDataActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new UpdateDataActivityPage(driver, logger);
+	}
+	
+	public StopWorkflowActivityPage addNewWorkFlowForStopWorkflowActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new StopWorkflowActivityPage(driver, logger);
+	}
+	
+	public HTTPSActivity addNewWorkFlowForHTTPSActivity(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new HTTPSActivity(driver, logger);
+	}
+	
+	public SetInteractionDataPage addNewWorkFlowForSetInteractionData(String NewWorkFlowName) {
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkflowButton);
+		 commonActions.click(AddNewWorkflowButton);
+		 log.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 logger.info("Clicked on the add new workflow button" + AddNewWorkflowButton.toString());
+		 commonActions.waitUntilElementIsVisible(driver, 60, AddNewWorkFlowTextBox);
+		 commonActions.enterData(AddNewWorkFlowTextBox, "A "+NewWorkFlowName);
+		 log.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 logger.info("Entered New Workflow Name :" + NewWorkFlowName);
+		 commonActions.waitUntilElementTobeClickable(driver, 60, AddNewWorkFlowSaveButton);
+		 commonActions.click(AddNewWorkFlowSaveButton);
+		 log.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 logger.info("Clicked on the add new workflow save button" + AddNewWorkFlowSaveButton.toString());
+		 commonActions.waitFor(3000);
+		 return new SetInteractionDataPage(driver, logger);
 	}
 	
 	public DynamicUIActivityPage addNewWorkFlowForDynamicUI(String NewWorkFlowName) {

@@ -10,9 +10,11 @@ import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -112,6 +114,11 @@ public class TestBase{
 				System.out.println("Exception occured when copying screenshot to folder.");
 			}
 			return path;
+		}
+		
+		public static void drawBorder(WebElement element, WebDriver driver) {
+			JavascriptExecutor js = ((JavascriptExecutor)driver);
+			js.executeScript("arguments[0].style.boarder='3px solid red'", element);
 		}
 
 }

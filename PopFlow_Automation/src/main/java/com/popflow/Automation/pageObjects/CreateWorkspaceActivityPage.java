@@ -138,13 +138,13 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	WebElement IncidentCloseButton;
 		
 	@FindBy(how = How.ID, using = "username")
-	private WebElement oscLoginPageUserNameField;
+	WebElement oscLoginPageUserNameField;
 
 	@FindBy(how = How.ID, using = "password")
-	private WebElement oscLoginPagePasswordField;
+	WebElement oscLoginPagePasswordField;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='loginbutton']")
-	private WebElement oscLoginPageLoginBtn;
+	WebElement oscLoginPageLoginBtn;
 	
 	@FindBy(xpath="//iframe[@class='stage-iframe']")
 	WebElement PopFlowFrame;
@@ -185,7 +185,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	@FindBy(xpath = "//a[contains(text(),'Paste Create Contact')]")
 	WebElement Pasteoption;
 	
-	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/div[2]/div[2]/div[2]/mapper/ul/li/div/div[2]/flow-chart/div[2]/mapper/ul/li/div/div/div")
+	@FindBy(xpath = "//div[contains(text(), ' On Open ')]")
 	WebElement OnOpenEvent;
 	
 	@FindBy(xpath = "//i[contains(text(),'close')]")
@@ -230,7 +230,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 	@FindBy(xpath = "//input[@class='ng2-tag-input__text-input ng-untouched ng-pristine ng-valid']")
 	WebElement EnterProfileTextBox;
 	
-	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/publish-confirm/div/div/div/div[2]/div[1]/tag-input/tag-input-dropdown/ng2-dropdown/div/ng2-dropdown-menu/div[1]/div/ng2-menu-item[2]/div")
+	@FindBy(xpath = "/html/body/app-root/div[2]/workflow/publish-confirm/div/div/div/div[2]/div/tag-input/tag-input-dropdown/ng2-dropdown/div/ng2-dropdown-menu/div[1]/div/ng2-menu-item/div/span")
 	WebElement QAProfileFromDropDown;
 	
 	@FindBy(xpath = "//button[@class='btn btn-success ng-star-inserted']")
@@ -261,7 +261,6 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		logger.info("Clicked on the workflow design button " + WorkflowDesignButton);
 		commonActions.waitUntilElementIsVisible(driver, 60, InitialActivityButton);
 		if(commonActions.isElementPresent(InitialActivityButton)) {
-			
 		commonActions.click(InitialActivityButton);
 		commonActions.waitUntilElementIsVisible(driver, 60, CloseButtonFromActivityList);
 		commonActions.enterData(SearchActivityTextBox, CreateWorkspaceString);
@@ -278,6 +277,26 @@ public class CreateWorkspaceActivityPage extends TestBase{
 			log.info("Unable to see the initial activity panel on the workspace ");
 			logger.info("Unable to see the initial activity panel on the worksace");
 		}
+	}
+	
+	public void renameActivity(String CreateWorkspaceString) {
+		AddCreateWorkspaceActitiy(CreateWorkspaceString);
+		CommonCases.TestrenameActivity(" Rename");
+	}	
+	
+	public void pinActivity(String CreateWorkspaceString) {
+		AddCreateWorkspaceActitiy(CreateWorkspaceString);
+		CommonCases.pinActivity(CreateWorkspaceString);
+		}
+	
+	public void deleteActivity(String CreateWorkspaceString) {
+		AddCreateWorkspaceActitiy(CreateWorkspaceString);
+		CommonCases.deleteActivity(CreateWorkspaceString);
+	}
+	
+	public void copyPasteActivity(String CreateWorkspaceString) {
+		AddCreateWorkspaceActitiy(CreateWorkspaceString);
+		CommonCases.copyPasteActivityTest(CreateWorkspaceString, OnOpenEvent);
 	}
 	
 	public void verifyCreateContact(String CreateWorkspaceString) {
@@ -310,35 +329,6 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		OSCLogin.switchBackToPopflowWindow();
 		switchToPopflowIFrmae();
 	}
-	
-/*	public void verifyCreateContact(String CreateWorkspaceString) {
-		selectContactWorkspace(CreateWorkspaceString);
-		commonActions.waitFor(1000);
-		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
-		commonActions.click(AddedCreateWorkspaceActivity);
-		addContactEntity();
-		commonActions.waitUntilElementIsVisible(driver, 60, CreateWorkspaceDesignerCloseButton);
-		commonActions.click(CreateWorkspaceDesignerCloseButton);
-		log.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
-		logger.info("Clicked on the close button from designer " + CreateWorkspaceDesignerCloseButton);
-		commonActions.waitUntilElementIsVisible(driver, 60, AddedCreateWorkspaceActivity);
-		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
-		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
-		log.info("User is logged in to the OSC ");
-		logger.info("User is logged in to the OSC ");
-		OSCLogin.switchBackToPopflowWindow();
-		switchToPopflowIFrmae();
-		runTest();
-		OSCLogin.switchToOSCWindow();
-		commonActions.waitUntilElementIsVisible(driver, 60, OSCFirstName);
-		String text = commonActions.getText(OSCFirstName);
-		log.info("Text is :" + text);
-		commonActions.verifyAssertTrue(text.equalsIgnoreCase("First Last"), 
-				"Contact is created using create workspace activity", 
-				"Unable to create contact using create workspace activity");
-		OSCLogin.switchBackToPopflowWindow();
-		switchToPopflowIFrmae();
-	} */
 	
 	public void selectContactWorkspace(String CreateWorkspaceString) {
 		AddCreateWorkspaceActitiy(CreateWorkspaceString);
@@ -526,27 +516,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		CommonCases.runTest();
 	}
 	
-	public void renameActivity(String CreateWorkspaceString) {
-		selectContactWorkspace(CreateWorkspaceString);
-		CommonCases.renameActivity(CreateWorkspaceString);
-	}	
-	
-	public void pinActivity(String CreateWorkspaceString) {
-		selectContactWorkspace(CreateWorkspaceString);
-		CommonCases.pinActivity(CreateWorkspaceString);
-		}
-	
-	public void deleteActivity(String CreateWorkspaceString) {
-		selectContactWorkspace(CreateWorkspaceString);
-		CommonCases.deleteActivity(CreateWorkspaceString);
-	}
-	
-	public void copyPasteActivity(String CreateWorkspaceString) {
-		selectContactWorkspace(CreateWorkspaceString);
-		CommonCases.copyPasteActivity(CreateWorkspaceString);
-	}
-	
-	public void onOpenEvent(String CreateWorkspaceString, String DynamicUIString) {
+	public void onOpenEvent(String CreateWorkspaceString, String DynamicUIString, String DynamicUiTitle) {
 		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
 		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
 		log.info("User is logged in to the OSC ");
@@ -573,7 +543,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(OnOpenEventActivity);
 		log.info("Clicked on the activity added on the On Open event " + OnOpenEventActivity);
 		logger.info("Clicked on the activity added on the On Open event " + OnOpenEventActivity);
-		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString, DynamicUiTitle);
 		
 		runTest();
 		OSCLogin.switchToOSCWindow();
@@ -606,7 +576,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		}
 	}
 	
-	public void recordSaveEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+	public void recordSaveEvent(String CreateWorkspaceString, String EventName, String DynamicUIString, String DynamicUiTitle) {
 		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
 		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
 		log.info("User is logged in to the OSC ");
@@ -643,7 +613,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(OnEventActivity);
 		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
 		logger.info("Clicked on the On Record Save button from designer " + OnEventActivity);
-		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString, DynamicUiTitle);
 		
 		runTest();
 		OSCLogin.switchToOSCWindow();
@@ -670,7 +640,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		switchToPopflowIFrmae(); 
 	}
 	
-	public void recordCloseEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+	public void recordCloseEvent(String CreateWorkspaceString, String EventName, String DynamicUIString, String DynamicUiTitle) {
 		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
 		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
 		log.info("User is logged in to the OSC ");
@@ -707,7 +677,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(OnEventActivity);
 		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
 		logger.info("Clicked on the activity added on the On Record Save event " + OnEventActivity);
-		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString, DynamicUiTitle);
 		
 		runTest();
 		OSCLogin.switchToOSCWindow();
@@ -740,7 +710,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		switchToPopflowIFrmae(); 
 	}
 	
-	public void ondataLoadedEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+	public void ondataLoadedEvent(String CreateWorkspaceString, String EventName, String DynamicUIString, String DynamicUiTitle) {
 		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
 		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
 		log.info("User is logged in to the OSC ");
@@ -777,7 +747,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(OnEventActivity);
 		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
 		logger.info("Clicked on the activity added on the On Record Save event " + OnEventActivity);
-		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString, DynamicUiTitle);
 		
 		runTest();
 		OSCLogin.switchToOSCWindow();
@@ -806,7 +776,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		switchToPopflowIFrmae(); 
 	}
 	
-	public void onEditorLoadedEvent(String CreateWorkspaceString, String EventName, String DynamicUIString) {
+	public void onEditorLoadedEvent(String CreateWorkspaceString, String EventName, String DynamicUIString, String DynamicUiTitle) {
 		OSCLogin.openOSCWindow(prop.getProperty("OSCURL"));
 		OSCLogin.loginToOSC(prop.getProperty("crmUN"), prop.getProperty("crmPwd"));
 		log.info("User is logged in to the OSC ");
@@ -843,7 +813,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(OnEventActivity);
 		log.info("Clicked on the activity added on the On Record Save event  " + OnEventActivity);
 		logger.info("Clicked on the activity added on the On Record Save event " + OnEventActivity);
-		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString);
+		DynamicUI.EnterDetailsInDynamicUIActivity(DynamicUIString, DynamicUiTitle);
 		
 		runTest();
 		OSCLogin.switchToOSCWindow();
@@ -891,7 +861,7 @@ public class CreateWorkspaceActivityPage extends TestBase{
 		commonActions.click(publishButton);
 		commonActions.waitUntilElementIsVisible(driver, 60, EnterProfileTextBox);
 		commonActions.click(EnterProfileTextBox);
-		commonActions.enterData(EnterProfileTextBox, "qa");
+		commonActions.enterData(EnterProfileTextBox, "amitprofile");
 		commonActions.waitUntilElementIsVisible(driver, 60, QAProfileFromDropDown);
 		commonActions.click(QAProfileFromDropDown);
 		commonActions.waitUntilElementIsVisible(driver, 60, PublishButtonFromPopUp);

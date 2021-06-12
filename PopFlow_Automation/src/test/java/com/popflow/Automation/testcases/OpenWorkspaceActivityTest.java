@@ -37,7 +37,6 @@ public class OpenWorkspaceActivityTest extends TestBase{
 		AMHomePage = LoginPage.enterLoginDataToAppManager(prop.getProperty("email"), prop.getProperty("password"));
 		commonActions.verifyAssertTrue(LoginPage.getExpandButtonFlag(),
 				"User is login successfully to App Manager", "User is not login successfully to App Manager");
-		AMHomePage.navigateToCloudopflow();
 		AMHomePage.switchToPopflowIFrmae();
 		System.out.println("Switched to frame");
 		commonActions.verifyAssertTrue(AMHomePage.CRMInstanceFlag(),
@@ -59,7 +58,7 @@ public class OpenWorkspaceActivityTest extends TestBase{
 	}
 	
 	@Test
-	public void verifyEditActivity() {
+	public void verifyRenameActivity() {
 		logger = extent.createTest("Verify user is able to rename the open workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();
 		OpenWorkspace.renameActivity(prop.getProperty("OpenWorkspaceString"));

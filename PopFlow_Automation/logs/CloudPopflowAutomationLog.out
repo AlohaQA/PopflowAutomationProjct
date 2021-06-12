@@ -1,14 +1,21 @@
-2020-12-01 07:09:52 INFO  pageObjects.AppManagerLoginPage:53 - Entered Email :anup.lakhe@openmethods.com
-2020-12-01 07:09:52 INFO  pageObjects.AppManagerLoginPage:59 - Entered Password :Aloha@7890
-2020-12-01 07:10:06 INFO  helperClass.CommonActions:328 - PASS :User is login successfully to App Manager
-2020-12-01 07:10:06 INFO  pageObjects.AppManagerHomePage:49 - Clicked on the expand-collapse button [[ChromeDriver: chrome on WINDOWS (82cbd3dcc15bcbdaaaf2528f3a724d2d)] -> xpath: //img[@class='expand-collapse-icon']]
-2020-12-01 07:10:09 INFO  pageObjects.AppManagerHomePage:56 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
-2020-12-01 07:10:10 INFO  helperClass.CommonActions:328 - PASS :Popflow CRM Instance page displayed
-2020-12-01 07:10:10 INFO  pageObjects.AppManagerHomePage:64 - Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button'
-2020-12-01 07:10:12 INFO  pageObjects.PopflowHomePage:431 - Edit workflow button is present [[ChromeDriver: chrome on WINDOWS (82cbd3dcc15bcbdaaaf2528f3a724d2d)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[1]/h5/edit-input/div/span/i]
-2020-12-01 07:10:12 INFO  pageObjects.PopflowHomePage:434 - Cllicked on the edit workflow buttonProxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[1]/h5/edit-input/div/span/i'
-2020-12-01 07:10:12 INFO  helperClass.CommonActions:190 - Text is:	Workflow name cannot be larger than 45 characters.
-2020-12-01 07:10:12 INFO  pageObjects.PopflowHomePage:441 - Error message when entered workflow name more than 45 characters. : Workflow name cannot be larger than 45 characters.
-2020-12-01 07:10:12 INFO  helperClass.CommonActions:328 - PASS :Showing correct error message after entering workflow name more than 50 characters
-2020-12-01 07:10:12 INFO  pageObjects.PopflowHomePage:450 - Clicked ont the settings button [[ChromeDriver: chrome on WINDOWS (82cbd3dcc15bcbdaaaf2528f3a724d2d)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/button/i]
-2020-12-01 07:10:13 INFO  helperClass.CommonActions:328 - PASS :Validations are provided when user enter workflow name more than 50 characters
+2021-06-12 08:01:37 INFO  pageObjects.AppManagerLoginPage:53 - Entered Email :anup.lakhe@openmethods.com
+2021-06-12 08:01:37 INFO  pageObjects.AppManagerLoginPage:59 - Entered Password :Aloha@7890
+2021-06-12 08:01:53 INFO  helperClass.CommonActions:339 - PASS :User is login successfully to App Manager
+2021-06-12 08:01:53 INFO  pageObjects.AppManagerHomePage:56 - Switched to iframeProxy element for: DefaultElementLocator 'By.xpath: //iframe[@class='stage-iframe']'
+2021-06-12 08:01:56 INFO  helperClass.CommonActions:339 - PASS :Popflow CRM Instance page displayed
+2021-06-12 08:01:57 INFO  pageObjects.AppManagerHomePage:64 - Clicked on the CRM Instance Design ButtonProxy element for: DefaultElementLocator 'By.xpath: //div[@class='card-body']//div[@class='card-text']//a[contains(text(), 'isv-19c-openmethods-3.rightnow')]/../..//div[3]//button[contains(text(), 'Design')]'
+2021-06-12 08:01:57 INFO  pageObjects.PopflowHomePage:449 - Clicked on the add new workflow button[[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: //i[@title='Add New']]
+2021-06-12 08:01:57 INFO  pageObjects.PopflowHomePage:453 - Entered New Workflow Name :Set Value
+2021-06-12 08:01:58 INFO  pageObjects.PopflowHomePage:457 - Clicked on the add new workflow save button[[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[1]/div/div/div[3]/button[2]]
+2021-06-12 08:02:01 INFO  pageObjects.PopflowHomePage:178 - Clicked on the Stop workflow button [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: //h6[contains(text(), 'Set Value')]]
+2021-06-12 08:02:01 INFO  pageObjects.PopflowHomePage:182 - Clicked on the workflow design button Proxy element for: DefaultElementLocator 'By.xpath: /html/body/app-root/div[2]/instance/div/instance-workflow/section/div/div/div[1]/div/div[2]/div/a'
+2021-06-12 08:02:08 INFO  helperClass.CommonActions:339 - PASS :User able to search the Set Interaction Data activity in the activity list
+2021-06-12 08:02:08 INFO  pageObjects.PopflowHomePage:197 - Clicked on the Set Interaction Data activity from search Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(text(), 'Set Value')]/../..//div[@class='activity-details']'
+2021-06-12 08:02:10 INFO  pageObjects.PopflowHomePage:180 - Clicked on the settings button from the activity panel [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: //i[contains(text(),'settings')]]
+2021-06-12 08:02:10 INFO  pageObjects.PopflowHomePage:185 - Clicked on the Delete button from the settings drop down [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: //a[contains(text(),'Delete')]]
+2021-06-12 08:02:10 INFO  pageObjects.PopflowHomePage:189 - Clicked on the Delete button from Popup Proxy element for: DefaultElementLocator 'By.xpath: //button[contains(text(),'Delete')]'
+2021-06-12 08:02:10 INFO  pageObjects.PopflowHomePage:926 - Instance button is present on the popflow studio [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: //a[contains(text(),'Instances')]]
+2021-06-12 08:02:11 INFO  pageObjects.PopflowHomePage:929 - Clicked on the instance button [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: //a[contains(text(),'Instances')]]
+2021-06-12 08:02:15 INFO  helperClass.CommonActions:131 - Button clicked for location by hovering on it=>[[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i]
+2021-06-12 08:02:15 INFO  pageObjects.PopflowHomePage:621 - Clicked on delete workflow button [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/section/div[2]/ul/li[1]/div/i]
+2021-06-12 08:02:15 INFO  pageObjects.PopflowHomePage:625 - Clicked on delete workflow button on popup [[ChromeDriver: chrome on WINDOWS (a5bdd955bbf3d505eaf742f2801cdab6)] -> xpath: /html/body/app-root/div[2]/instance/div/instance-workflows/div[2]/div/div/div[3]/button[2]]

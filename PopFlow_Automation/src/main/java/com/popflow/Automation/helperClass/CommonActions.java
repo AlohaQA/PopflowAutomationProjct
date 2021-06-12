@@ -16,134 +16,131 @@ import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 
-
-
 public class CommonActions {
-	
+
 	private static final int VK_N = 0;
 	private WebDriverWait webDriverWait;
 	private WebDriver driver;
 	private ExtentTest logger;
-	
+
 	Logger log = LoggerHelper.getLogger(CommonActions.class);
-	
+
 	public CommonActions(WebDriver driver, ExtentTest logger) {
 		this.driver = driver;
 		this.logger = logger;
 	}
-	
-	public WebDriverWait waitUntilElementIsVisible(WebDriver driver , int sec , WebElement element) {
+
+	public WebDriverWait waitUntilElementIsVisible(WebDriver driver, int sec, WebElement element) {
 		webDriverWait = new WebDriverWait(driver, sec);
 		webDriverWait.until(ExpectedConditions.visibilityOf(element));
 		return webDriverWait;
 	}
-	
-	public WebDriverWait waitUntilVisibilityOfElementLocated(WebDriver driver , By by, int sec) {
+
+	public WebDriverWait waitUntilVisibilityOfElementLocated(WebDriver driver, By by, int sec) {
 		webDriverWait = new WebDriverWait(driver, sec);
 		webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
 		return webDriverWait;
 	}
-	
-	public WebDriverWait waitUntilElementTobeClickable(WebDriver driver , int sec, WebElement element)
-	{
+
+	public WebDriverWait waitUntilElementTobeClickable(WebDriver driver, int sec, WebElement element) {
 		webDriverWait = new WebDriverWait(driver, sec);
 		webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
 		return webDriverWait;
 	}
-	
+
 	public void waitFor(int sec) {
 		try {
 			Thread.sleep(sec);
-		}catch (InterruptedException e) {
+		} catch (InterruptedException e) {
 			log.info("Timeout exception occured" + e.getMessage());
 			logger.info("Timeout exception occured" + e.getMessage());
 		}
 	}
-	
+
 	public boolean isElementPresent(WebElement element) {
 		try {
 			boolean flag = element.isDisplayed();
-			System.out.println("Element"+ element.toString() + "Present on UI is:\t" + flag);
-			return flag;		
-		}catch (Exception e) {
+			System.out.println("Element" + element.toString() + "Present on UI is:\t" + flag);
+			return flag;
+		} catch (Exception e) {
 			log.info("UI Element is not present and exception is occured " + e);
 			logger.info("UI Element is not present and exception is occured " + e);
 			return false;
 		}
 	}
-	
+
 	public void isElementEnabled(WebElement element) {
 		element.isEnabled();
 	}
-	
+
 	public void isElementSelected(WebElement element) {
 		element.isEnabled();
 	}
-	
+
 	public Boolean isElementPresent(WebDriver driver, int sec, By by) {
-		try{
+		try {
 			waitUntilVisibilityOfElementLocated(driver, by, sec);
 			WebElement element = driver.findElement(by);
 			Boolean flag = element.isDisplayed();
-			log.info("Element" + element.toString() +"Present on the UI is :/t" + flag);
-			logger.info("Element" + element.toString() +"Present on the UI is :/t" + flag);
+			log.info("Element" + element.toString() + "Present on the UI is :/t" + flag);
+			logger.info("Element" + element.toString() + "Present on the UI is :/t" + flag);
 			return flag;
-		}catch (Exception e) {
-			log.info("Element is not present and exception is occured "+ e);
-			logger.info("Element is not present and exception is occured "+ e);
+		} catch (Exception e) {
+			log.info("Element is not present and exception is occured " + e);
+			logger.info("Element is not present and exception is occured " + e);
 			return false;
 		}
 	}
-	
+
 	public void click(WebElement element) {
-			if(isElementPresent(element)) {
-				element.click();
-			}else {
-				log.info("Element is not present and click on element is not performed");
-				logger.info("Element is not present and click on element is not performed");
-			}
-	}
-	
-	public void RightClick(WebElement element) {
-		  Actions actions = new Actions(driver);
-		 
-		  if(isElementPresent(element)) {
-			  actions.contextClick(element).perform();
-			}else {
-				log.info("Element is not present and click on element is not performed");
-				logger.info("Element is not present and click on element is not performed");
-			}
-	}
-	
-	public  WebElement Importclick(WebElement element) {
-		if(isElementPresent(element)) {
+		if (isElementPresent(element)) {
 			element.click();
-		}else {
+		} else {
+			log.info("Element is not present and click on element is not performed");
+			logger.info("Element is not present and click on element is not performed");
+		}
+	}
+
+	public void RightClick(WebElement element) {
+		Actions actions = new Actions(driver);
+
+		if (isElementPresent(element)) {
+			actions.contextClick(element).perform();
+		} else {
+			log.info("Element is not present and click on element is not performed");
+			logger.info("Element is not present and click on element is not performed");
+		}
+	}
+
+	public WebElement Importclick(WebElement element) {
+		if (isElementPresent(element)) {
+			element.click();
+		} else {
 			log.info("Element is not present and click on element is not performed");
 			logger.info("Element is not present and click on element is not performed");
 		}
 		return element;
-}
-	
+	}
+
 	public void clickbymouseHover(WebElement element) {
-        try {
-            if (isElementPresent(element)) {
-                Actions builder = new Actions(driver);
-                builder.moveToElement(element).build().perform();
-                element.click();
-                log.info("Button clicked for location by hovering on it=>" + element);
-                logger.info("Button clicked for location by hovering on it=>" + element);
-            } else {
-                assertFail("Location doesn't found. Loc-" + element);
-            }
-        } catch (Exception e) {
-            if (isElementPresent(element)) {
-            	 element.click();
-            } else {
-                assertFail("Location doesn't found. Loc-" + element);
-            }
-        }
-    }
+		try {
+			if (isElementPresent(element)) {
+				Actions builder = new Actions(driver);
+				builder.moveToElement(element).build().perform();
+				element.click();
+				log.info("Button clicked for location by hovering on it=>" + element);
+				logger.info("Button clicked for location by hovering on it=>" + element);
+			} else {
+				assertFail("Location doesn't found. Loc-" + element);
+			}
+		} catch (Exception e) {
+			if (isElementPresent(element)) {
+				element.click();
+			} else {
+				assertFail("Location doesn't found. Loc-" + element);
+			}
+		}
+	}
 
 	public void clickOnElementUsingJavaScript(WebElement element) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -163,7 +160,7 @@ public class CommonActions {
 			logger.info("Element is not present and unable to send the data to element.");
 		}
 	}
-	
+
 	public void enterDataByClearingTextBox(WebElement element, String data) {
 		if (isElementPresent(element)) {
 			element.clear();
@@ -223,9 +220,25 @@ public class CommonActions {
 			System.out.println("Exception occurred when minimizing the app." + e);
 		}
 	}
-	
-	
-	// Assertion Methods ................  
+
+	public void zoomOutBrowser() {
+		Robot robot;
+		try {
+			robot = new Robot();
+			for (int i = 0; i < 2; i++) {
+				robot.keyPress(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_SUBTRACT);
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+				robot.keyRelease(KeyEvent.VK_SUBTRACT);
+				waitFor(1000);
+			}
+		} catch (AWTException e) {
+			System.out.println("Exception occurred when minimizing the app." + e);
+		}
+
+	}
+
+	// Assertion Methods ................
 	public String passMsg(String msg) {
 		return "PASS :" + msg;
 	}
@@ -239,7 +252,7 @@ public class CommonActions {
 	}
 
 	public void fail(String msg) {
-		logger.info(failMsg (msg));
+		logger.info(failMsg(msg));
 	}
 
 	public void info(String msg) {
@@ -260,7 +273,6 @@ public class CommonActions {
 			verifyAsserFailWithException(failMsg, e);
 		}
 	}
-
 
 	public void scrollUP(JavascriptExecutor js) {
 		js.executeScript("scroll(0, -250);");
@@ -306,10 +318,9 @@ public class CommonActions {
 		logger.info("********** Ended Test  " + method + "  Execution ********** ");
 	}
 
-
 	public void verifyAsserFailWithException(String msg, Error e) {
 		System.out.println(failMsg(msg));
-		 log.info(e.getMessage());
+		log.info(e.getMessage());
 		fail(e.getMessage());
 		Assert.fail(failMsg(msg));
 	}
@@ -332,7 +343,5 @@ public class CommonActions {
 		}
 
 	}
-
-
 
 }

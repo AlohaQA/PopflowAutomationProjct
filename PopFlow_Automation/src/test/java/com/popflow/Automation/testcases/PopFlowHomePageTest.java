@@ -143,7 +143,7 @@ public class PopFlowHomePageTest extends TestBase {
 	}
 	
 	@Test
-	public void verifyEditWorkflowFunctionality() {
+	public void verifyEditWorkflowNameFunctionality() {
 		logger = extent.createTest("Verify that user is able to edit the workflow name");
 		this.AppManagerLogin();
 		PFHomePage.editWorkflow();
@@ -168,7 +168,7 @@ public class PopFlowHomePageTest extends TestBase {
 	}
 	
 	@Test
-	public void verifyErroMessageForLongWFDescrition() {
+	public void verifyErroMessageForLongWFDescription() {
 		logger = extent.createTest("Verify that it is having validations for long workflow description");
 		this.AppManagerLogin();
 		PFHomePage.getErrormessageForLongWFDescription(prop.getProperty("longWorkFlowDesString"));
@@ -178,7 +178,7 @@ public class PopFlowHomePageTest extends TestBase {
 		logger.info("Validations are provided when user enter workflow description more than 200 characters");	
 	}
 	
-	@Test
+	//@Test
 	public void verifyCustomEventDeleteFunctioanlity() {
 		logger = extent.createTest("Verify that user is able to delete the custom event");
 		this.AppManagerLogin();

@@ -4,9 +4,9 @@
 <test name="Verify Cloud Popflow Test Cases">
 		<classes>
 		<class
-				name="com.popflow.Automation.testcases.PopFlowHomePageTest">
+				name="com.popflow.Automation.testcases.SetInteractionDataTest">
 				<methods>
-					<include name = "verifyErroMessageForLongWFName">
+					<include name="verifyDeleteSetValueActivity">
 					</include>
 				</methods>
 			</class>

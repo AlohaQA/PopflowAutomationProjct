@@ -36,7 +36,6 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		AMHomePage = LoginPage.enterLoginDataToAppManager(prop.getProperty("email"), prop.getProperty("password"));
 		commonActions.verifyAssertTrue(LoginPage.getExpandButtonFlag(),
 				"User is login successfully to App Manager", "User is not login successfully to App Manager");
-		AMHomePage.navigateToCloudopflow();
 		AMHomePage.switchToPopflowIFrmae();
 		System.out.println("Switched to frame");
 		commonActions.verifyAssertTrue(AMHomePage.CRMInstanceFlag(),
@@ -94,7 +93,8 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		logger = extent.createTest("Verify user is able to execute activiy on the On Open event ");
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.onOpenEvent(prop.getProperty("CreateWorkspaceString"), 
-									prop.getProperty("DynamicUIString"));
+									prop.getProperty("DynamicUIString"), 
+									prop.getProperty("DynamicUiTitle"));
 		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
 				"User is able to execute the activity on the On Open Event ", 
 				"Unable to execute the activity on the On Open Event ");
@@ -107,7 +107,8 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.recordSaveEvent(prop.getProperty("CreateWorkspaceString"), 
 										prop.getProperty("OnRecordSaveEvent"), 
-										prop.getProperty("DynamicUIString"));
+										prop.getProperty("DynamicUIString"), 
+										prop.getProperty("DynamicUiTitle"));
 		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
 				"User is able to execute the On Record Save Event ", 
 				"Unable to execcute the On Record Save Event ");
@@ -120,7 +121,8 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.recordCloseEvent(prop.getProperty("CreateWorkspaceString"), 
 										prop.getProperty("OnRecordCloseEvent"), 
-										prop.getProperty("DynamicUIString"));
+										prop.getProperty("DynamicUIString"), 
+										prop.getProperty("DynamicUiTitle"));
 		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
 				"User is able to execute the On Record Close Event ", 
 				"Unable to execcute the On Record Close Event ");
@@ -133,7 +135,8 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.ondataLoadedEvent(prop.getProperty("CreateWorkspaceString"), 
 										prop.getProperty("OnDataLoadedEvent"), 
-										prop.getProperty("DynamicUIString"));
+										prop.getProperty("DynamicUIString"), 
+										prop.getProperty("DynamicUiTitle"));
 		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
 				"User is able to execute the On Data Loaded Event ", 
 				"Unable to execcute the On Data Loaded Event ");
@@ -146,7 +149,8 @@ public class CreateWorkspaceActivityTest extends TestBase{
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.onEditorLoadedEvent(prop.getProperty("CreateWorkspaceString"), 
 										prop.getProperty("OnEditorLoadedEvent"), 
-										prop.getProperty("DynamicUIString"));
+										prop.getProperty("DynamicUIString"), 
+										prop.getProperty("DynamicUiTitle"));
 		commonActions.verifyAssertTrue(CreateWorkspace.CreateWorkspaceFlag(), 
 				"User is able to execute the On Editor Loaded Event ", 
 				"Unable to execcute the On Data Editor Event ");
@@ -154,7 +158,7 @@ public class CreateWorkspaceActivityTest extends TestBase{
 	}
 	
 	@Test
-	public void verifyEditActivity() {
+	public void verifyRenameActivity() {
 		logger = extent.createTest("Verify user is able to rename the create workspace activity");
 		this.AppManagerLoginAndCreateaWorkflow();
 		CreateWorkspace.renameActivity(prop.getProperty("CreateWorkspaceString"));

@@ -3,16 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.popflow.Automation.testcases.CreateWorkspaceActivityTest">
+      <class name="com.popflow.Automation.testcases.StopWorkflowActivityTest">
         <methods>
           <include name="setuSuite"/>
-          <include name="verifyOnRecordSaveEvent"/>
+          <include name="verifyRenameStopWorfklowActivity"/>
           <include name="initialization"/>
           <include name="beforeclass"/>
           <include name="afterSuite"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.popflow.Automation.testcases.CreateWorkspaceActivityTest -->
+      </class> <!-- com.popflow.Automation.testcases.StopWorkflowActivityTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

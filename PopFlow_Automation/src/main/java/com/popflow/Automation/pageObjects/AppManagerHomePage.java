@@ -33,7 +33,7 @@ public class AppManagerHomePage {
 //	@FindBy(xpath="/html/body/app-root/div[2]/instance-list/div[2]/div/div[3]/div/div[2]/div[3]/button")
 //	WebElement DesignButtonInstance;
 	
-	@FindBy(xpath="/html/body/app-root/div[2]/instance-list/div[2]/div/div[1]/div/div[2]/div[3]/button")
+	@FindBy(xpath="//div[@class='card-body']//div[@class='card-text']//a[contains(text(), 'isv-19c-openmethods-3.rightnow')]/../..//div[3]//button[contains(text(), 'Design')]")
 	WebElement DesignButtonInstance;
 	
 	public AppManagerHomePage(WebDriver driver, ExtentTest logger) {
